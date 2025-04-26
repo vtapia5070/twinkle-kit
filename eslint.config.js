@@ -19,21 +19,10 @@ const airbnbRules = {
   ...airbnbTypescript.rules,
 };
 
-const commonPlugins = {
-  '@typescript-eslint': typescriptPlugin,
-  react: pluginReact,
-  'react-hooks': pluginReactHooks,
-  'react-refresh': pluginReactRefresh,
-  prettier: pluginPrettier,
-  import: pluginImport,
-  'jsx-a11y': pluginJsxA11y,
-};
-
 export default [
   js.configs.recommended,
-  // Configuration for app TypeScript files
   {
-    files: ['src/**/*.{ts,tsx}'],
+    files: ['**/*.{ts,tsx}'],
     languageOptions: {
       globals: {
         ...globals.browser,
@@ -49,13 +38,20 @@ export default [
         },
       },
     },
-    plugins: commonPlugins,
+    plugins: {
+      '@typescript-eslint': typescriptPlugin,
+      react: pluginReact,
+      'react-hooks': pluginReactHooks,
+      'react-refresh': pluginReactRefresh,
+      prettier: pluginPrettier,
+      import: pluginImport,
+      'jsx-a11y': pluginJsxA11y,
+    },
     rules: {
       ...airbnbRules,
       ...typescriptPlugin.configs.recommended.rules,
       ...pluginReact.configs.recommended.rules,
       ...pluginReactHooks.configs.recommended.rules,
-      // Override some Airbnb rules that conflict with our setup
       'react/react-in-jsx-scope': 'off',
       'react/jsx-uses-react': 'off',
       'react/require-default-props': 'off',
@@ -75,31 +71,6 @@ export default [
           project: './tsconfig.app.json',
         },
       },
-    },
-  },
-  // Configuration for config TypeScript files
-  {
-    files: ['*.config.ts', 'vite.config.ts'],
-    languageOptions: {
-      globals: {
-        ...globals.node,
-      },
-      parser: typescriptParser,
-      parserOptions: {
-        project: './tsconfig.node.json',
-        ecmaVersion: 2022,
-        sourceType: 'module',
-      },
-    },
-    plugins: {
-      '@typescript-eslint': typescriptPlugin,
-      prettier: pluginPrettier,
-      import: pluginImport,
-    },
-    rules: {
-      ...airbnbBase.rules, // Use only base rules for config files
-      ...typescriptPlugin.configs.recommended.rules,
-      'import/prefer-default-export': 'off',
     },
   },
 ];
