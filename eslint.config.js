@@ -1,16 +1,16 @@
-import js from "@eslint/js";
-import globals from "globals";
-import pluginReact from "eslint-plugin-react";
-import pluginReactHooks from "eslint-plugin-react-hooks";
-import pluginReactRefresh from "eslint-plugin-react-refresh";
-import pluginPrettier from "eslint-plugin-prettier";
-import pluginImport from "eslint-plugin-import";
-import pluginJsxA11y from "eslint-plugin-jsx-a11y";
-import airbnbBase from "eslint-config-airbnb-base";
-import airbnbReact from "eslint-config-airbnb";
-import airbnbTypescript from "eslint-config-airbnb-typescript";
-import typescriptParser from "@typescript-eslint/parser";
-import typescriptPlugin from "@typescript-eslint/eslint-plugin";
+import js from '@eslint/js';
+import globals from 'globals';
+import pluginReact from 'eslint-plugin-react';
+import pluginReactHooks from 'eslint-plugin-react-hooks';
+import pluginReactRefresh from 'eslint-plugin-react-refresh';
+import pluginPrettier from 'eslint-plugin-prettier';
+import pluginImport from 'eslint-plugin-import';
+import pluginJsxA11y from 'eslint-plugin-jsx-a11y';
+import airbnbBase from 'eslint-config-airbnb-base';
+import airbnbReact from 'eslint-config-airbnb';
+import airbnbTypescript from 'eslint-config-airbnb-typescript';
+import typescriptParser from '@typescript-eslint/parser';
+import typescriptPlugin from '@typescript-eslint/eslint-plugin';
 
 // Convert traditional config to flat config format
 const airbnbRules = {
@@ -27,10 +27,11 @@ export default [
       globals: {
         ...globals.browser,
         ...globals.es2021,
+        ...globals.node,
       },
       parser: typescriptParser,
       parserOptions: {
-        project: './tsconfig.app.json',
+        project: './tsconfig.json',
         ecmaVersion: 2022,
         sourceType: 'module',
         ecmaFeatures: {
@@ -58,10 +59,14 @@ export default [
       'import/prefer-default-export': 'off',
       'react/jsx-filename-extension': [1, { extensions: ['.tsx', '.jsx'] }],
       'react/no-unescaped-entities': 'off',
-      'react/function-component-definition': ['error', {
-        namedComponents: 'arrow-function',
-        unnamedComponents: 'arrow-function',
-      }],
+      'react/function-component-definition': [
+        'error',
+        {
+          namedComponents: 'arrow-function',
+          unnamedComponents: 'arrow-function',
+        },
+      ],
+      'no-undef': 'off',
     },
     settings: {
       react: {
@@ -69,7 +74,7 @@ export default [
       },
       'import/resolver': {
         typescript: {
-          project: './tsconfig.app.json',
+          project: './tsconfig.json',
         },
       },
     },
