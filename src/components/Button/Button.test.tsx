@@ -5,11 +5,7 @@ import { Button } from './Button';
 
 describe('<Button />', () => {
   it('renders with given text', () => {
-    render(
-      <Button label="Click me" onClick={() => {}}>
-        Click me
-      </Button>
-    );
+    render(<Button onClick={() => {}}>Click me</Button>);
     expect(
       screen.getByRole('button', { name: /click me/i })
     ).toBeInTheDocument();
@@ -18,11 +14,7 @@ describe('<Button />', () => {
   it('calls onClick handler when clicked', async () => {
     const user = userEvent.setup();
     const handleClick = vi.fn();
-    render(
-      <Button label="Click me" onClick={handleClick}>
-        Click me
-      </Button>
-    );
+    render(<Button onClick={handleClick}>Click me</Button>);
 
     await user.click(screen.getByRole('button', { name: /click me/i }));
     expect(handleClick).toHaveBeenCalledTimes(1);
@@ -32,7 +24,7 @@ describe('<Button />', () => {
     const user = userEvent.setup();
     const handleClick = vi.fn();
     render(
-      <Button label="Can't click" onClick={handleClick} disabled>
+      <Button onClick={handleClick} disabled>
         Can't click
       </Button>
     );
