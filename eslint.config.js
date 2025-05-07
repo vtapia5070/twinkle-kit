@@ -57,6 +57,7 @@ export default [
       'react/require-default-props': 'off',
       'import/prefer-default-export': 'off',
       'react/jsx-filename-extension': [1, { extensions: ['.tsx', '.jsx'] }],
+      'react/no-unescaped-entities': 'off',
       'react/function-component-definition': ['error', {
         namedComponents: 'arrow-function',
         unnamedComponents: 'arrow-function',
