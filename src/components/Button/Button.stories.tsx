@@ -61,6 +61,6 @@ export const WithCustomClass: Story = {
   args: {
     children: 'Custom Styled Button',
     onClick: () => {},
-    className: 'some-class',
+    className: 'some-class underline',
   },
 };
