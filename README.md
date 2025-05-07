@@ -1,17 +1,48 @@
 # Twinkle Kit
 
-A modern React application built with TypeScript, Vite, and a comprehensive development tooling setup.
+A modern React component library built with TypeScript, Vite, and Tailwind CSS. Available on [npm](https://www.npmjs.com/package/twinkle-kit).
+
+## Installation
+
+```bash
+npm install twinkle-kit
+```
 
 ## Tech Stack
 
 - **Framework**: React 19 with TypeScript
 - **Build Tool**: Vite 6
+- **Styling**: Tailwind CSS
 - **Testing**: Vitest + React Testing Library
 - **Code Quality**:
   - ESLint with TypeScript support
   - Prettier for code formatting
   - Husky for git hooks
   - lint-staged for pre-commit checks
+
+## Usage
+
+Import components directly from the package:
+
+```tsx
+import { Button } from 'twinkle-kit';
+
+function App() {
+  return <Button onClick={() => console.log('clicked')}>Click me</Button>;
+}
+```
+
+## Tailwind CSS
+
+This component library uses Tailwind CSS for styling. All components are built with Tailwind utility classes, making them highly customizable. You can extend or override the default styles using Tailwind's utility classes.
+
+### Customization
+
+You can customize the components by passing additional Tailwind classes through the `className` prop:
+
+```tsx
+<Button className="bg-red-500 hover:bg-red-600">Custom Button</Button>
+```
 
 ## Development Setup
 
@@ -21,10 +52,10 @@ A modern React application built with TypeScript, Vite, and a comprehensive deve
 npm install
 ```
 
-2. Start the development server:
+2. Start Storybook:
 
 ```bash
-npm run dev
+npm run storybook
 ```
 
 3. Run tests:
@@ -72,6 +103,8 @@ The project uses Husky and lint-staged to ensure code quality:
 - `npm run lint` - Run ESLint
 - `npm run lint:fix` - Fix ESLint issues
 - `npm test` - Run tests
+- `npm run storybook` - Start Storybook development server
+- `npm run build-storybook` - Build Storybook for production
 
 ## VS Code Configuration
 
