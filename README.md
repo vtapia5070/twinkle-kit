@@ -64,6 +64,26 @@ npm run storybook
 npm test
 ```
 
+## Component Generation
+
+This project uses [Plop](https://plopjs.com/) for generating component templates. Plop helps maintain consistency across components by using predefined templates.
+
+### Generating Components
+
+To generate a new component with its associated files (component, story, and test), run:
+
+```bash
+npm run generate {{componentName}}
+```
+
+This will create:
+
+- A new component file with TypeScript and React setup
+- A Storybook story file
+- A test file with Vitest and React Testing Library setup
+
+The generated files follow the project's conventions and include all necessary imports and boilerplate code.
+
 ## Code Quality Tools
 
 ### ESLint Configuration

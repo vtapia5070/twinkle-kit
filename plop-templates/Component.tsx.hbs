@@ -1,0 +1,15 @@
+interface {{ComponentName}}Props {
+  className?: string;
+}
+
+export const {{ComponentName}} = ({
+  className = '',
+}: {{ComponentName}}Props) => {
+  return (
+    <div className={className}>
+      {{ComponentName}}
+    </div>
+  );
+};
+
+export default {{ComponentName}};
