@@ -5,7 +5,7 @@ export default function (plop) {
     prompts: [
       {
         type: 'input',
-        name: 'componentName',
+        name: 'ComponentName',
         message: 'What is the component name?',
       },
     ],
@@ -13,14 +13,19 @@ export default function (plop) {
       {
         type: 'add',
         // Path for the new file
-        path: 'src/components/{{componentName}}/{{componentName}}.tsx',
+        path: 'src/components/{{ComponentName}}/{{ComponentName}}.tsx',
         // Handlebars template used to generate content of new file
         templateFile: 'plop-templates/Component.tsx.hbs',
       },
       {
         type: 'add',
-        path: 'src/components/{{componentName}}/{{componentName}}.test.tsx',
+        path: 'src/components/{{ComponentName}}/{{ComponentName}}.test.tsx',
         templateFile: 'plop-templates/Component.test.tsx.hbs',
+      },
+      {
+        type: 'add',
+        path: 'src/components/{{ComponentName}}/{{ComponentName}}.stories.tsx',
+        templateFile: 'plop-templates/Component.stories.tsx.hbs',
       },
     ],
   });
