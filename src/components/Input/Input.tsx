@@ -1,5 +1,6 @@
 import { twMerge } from 'tailwind-merge';
 import { useId } from 'react';
+import { clsx } from 'clsx';
 
 interface InputProps {
   className?: string;
@@ -22,6 +23,18 @@ export const Input = ({
   inputId = useId(),
   required = false,
 }: InputProps) => {
+  // Base classes that are always applied
+  const baseClasses =
+    'mt-1 block w-full rounded-md shadow-sm focus:ring-2 focus:ring-offset-2 sm:text-sm';
+
+  // State-specific classes using object syntax
+  const stateClasses = clsx({
+    'border-gray-300 focus:border-blue-500 focus:ring-blue-500':
+      !error && !isDisabled,
+    'border-red-500 focus:border-red-500 focus:ring-red-500': error,
+    'bg-gray-100 cursor-not-allowed border-gray-200': isDisabled,
+  });
+
   return (
     <div className={twMerge(className)}>
       {label && (
@@ -39,11 +52,7 @@ export const Input = ({
         disabled={isDisabled}
         placeholder={placeholder}
         onChange={(e) => onChange(e.target.value)}
-        className={twMerge(
-          'mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm',
-          error && 'border-red-500',
-          isDisabled && 'bg-gray-100 cursor-not-allowed'
-        )}
+        className={twMerge(baseClasses, stateClasses)}
         aria-invalid={!!error}
         aria-describedby={error ? `${inputId}-error` : undefined}
       />
