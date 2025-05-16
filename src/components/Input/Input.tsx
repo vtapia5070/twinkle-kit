@@ -2,6 +2,8 @@ import { twMerge } from 'tailwind-merge';
 import { useId } from 'react';
 import { clsx } from 'clsx';
 
+// import './Input.css';
+
 interface InputProps {
   className?: string;
   onChange: (value: string) => void;
@@ -25,7 +27,7 @@ export const Input = ({
 }: InputProps) => {
   // Base classes that are always applied
   const baseClasses =
-    'mt-1 block w-full rounded-md shadow-sm focus:ring-2 focus:ring-offset-2 sm:text-sm';
+    'mt-1 block w-full rounded-md border shadow-sm focus:ring-2 focus:ring-offset-2 sm:text-sm';
 
   // State-specific classes using object syntax
   const stateClasses = clsx({

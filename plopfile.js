@@ -27,6 +27,11 @@ export default function (plop) {
         path: 'src/components/{{ComponentName}}/{{ComponentName}}.stories.tsx',
         templateFile: 'plop-templates/Component.stories.tsx.hbs',
       },
+      {
+        type: 'add',
+        path: 'src/components/{{ComponentName}}/index.ts',
+        templateFile: 'plop-templates/index.ts.hbs',
+      },
     ],
   });
 }
