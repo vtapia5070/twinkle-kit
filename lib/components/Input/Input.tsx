@@ -2,8 +2,6 @@ import { twMerge } from 'tailwind-merge';
 import { useId } from 'react';
 import { clsx } from 'clsx';
 
-// import './Input.css';
-
 interface InputProps {
   className?: string;
   onChange: (value: string) => void;
