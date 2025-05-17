@@ -3,6 +3,18 @@
   "private": false,
   "version": "0.0.0",
   "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/twinkle-kit.umd.cjs",
+  "module": "./dist/twinkle-kit.js",
+  "exports": {
+    ".": {
+      "import": "./dist/twinkle-kit.js",
+      "require": "./dist/twinkle-kit.umd.cjs"
+    },
+    "./style.css": "./dist/styles.css"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
