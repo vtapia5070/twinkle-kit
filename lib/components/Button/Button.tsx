@@ -1,7 +1,7 @@
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
-interface ButtonProps {
+export interface ButtonProps {
   onClick: () => void;
   disabled?: boolean;
   className?: string;

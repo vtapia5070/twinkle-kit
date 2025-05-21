@@ -1,11 +1,15 @@
 # Twinkle Kit
 
-A modern React component library built with TypeScript, Vite, and Tailwind CSS. Available on [npm](https://www.npmjs.com/package/twinkle-kit).
+A modern React component library built with Tailwind CSS.
 
 ## Installation
 
 ```bash
 npm install twinkle-kit
+# or
+yarn add twinkle-kit
+# or
+pnpm add twinkle-kit
 ```
 
 ## Tech Stack
@@ -22,46 +26,67 @@ npm install twinkle-kit
 
 ## Usage
 
-Import components directly from the package:
-
-```tsx
-import { Button } from 'twinkle-kit';
+```jsx
+import { Input } from 'twinkle-kit';
 
 function App() {
-  return <Button onClick={() => console.log('clicked')}>Click me</Button>;
+  return (
+    <Input
+      label="Email"
+      placeholder="Enter your email"
+      onChange={(value) => console.log(value)}
+    />
+  );
 }
 ```
 
-## Tailwind CSS
+## Styling
 
-This component library uses Tailwind CSS for styling. All components are built with Tailwind utility classes, making them highly customizable. You can extend or override the default styles using Tailwind's utility classes.
+Twinkle Kit comes with Tailwind CSS styles bundled, so you don't need to set up Tailwind CSS in your project. The styles are automatically included when you import the components.
 
 ### Customization
 
-You can customize the components by passing additional Tailwind classes through the `className` prop:
+While the styles are bundled, you can still customize the appearance using:
 
-```tsx
-<Button className="bg-red-500 hover:bg-red-600">Custom Button</Button>
-```
+1. **Props**: Each component accepts a `className` prop for custom styling
 
-## Development Setup
+   ```jsx
+   <Input className="my-custom-class" />
+   ```
 
-1. Install dependencies:
+2. **Theme Extension**: You can extend the default theme by creating a `tailwind.config.js` in your project:
+   ```js
+   /** @type {import('tailwindcss').Config} */
+   module.exports = {
+     content: [
+       './node_modules/twinkle-kit/dist/**/*.{js,ts,jsx,tsx}',
+       './src/**/*.{js,ts,jsx,tsx}',
+     ],
+     theme: {
+       extend: {
+         // Your custom theme extensions
+       },
+     },
+   };
+   ```
+
+## Development
 
 ```bash
+# Install dependencies
 npm install
-```
 
-2. Start Storybook:
+# Start development server
+npm run dev
 
-```bash
-npm run storybook
-```
-
-3. Run tests:
-
-```bash
+# Run tests
 npm test
+
+# Build the library
+npm run build
+
+# Start Storybook
+npm run storybook
 ```
 
 ## Component Generation
@@ -151,3 +176,15 @@ The project uses Vitest for testing with:
 - React Testing Library for component testing
 - Jest DOM for DOM testing utilities
 - User Event for simulating user interactions
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
