@@ -13,23 +13,23 @@ export default function (plop) {
       {
         type: 'add',
         // Path for the new file
-        path: 'src/components/{{ComponentName}}/{{ComponentName}}.tsx',
+        path: 'lib/components/{{ComponentName}}/{{ComponentName}}.tsx',
         // Handlebars template used to generate content of new file
         templateFile: 'plop-templates/Component.tsx.hbs',
       },
       {
         type: 'add',
-        path: 'src/components/{{ComponentName}}/{{ComponentName}}.test.tsx',
+        path: 'lib/components/{{ComponentName}}/{{ComponentName}}.test.tsx',
         templateFile: 'plop-templates/Component.test.tsx.hbs',
       },
       {
         type: 'add',
-        path: 'src/components/{{ComponentName}}/{{ComponentName}}.stories.tsx',
+        path: 'lib/components/{{ComponentName}}/{{ComponentName}}.stories.tsx',
         templateFile: 'plop-templates/Component.stories.tsx.hbs',
       },
       {
         type: 'add',
-        path: 'src/components/{{ComponentName}}/index.ts',
+        path: 'lib/components/{{ComponentName}}/index.ts',
         templateFile: 'plop-templates/index.ts.hbs',
       },
     ],

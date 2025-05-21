@@ -2,9 +2,7 @@ import { twMerge } from 'tailwind-merge';
 import { useId } from 'react';
 import { clsx } from 'clsx';
 
-// import './Input.css';
-
-interface InputProps {
+export interface InputProps {
   className?: string;
   onChange: (value: string) => void;
   isDisabled?: boolean;
@@ -70,5 +68,3 @@ export const Input = ({
     </div>
   );
 };
-
-export default Input;

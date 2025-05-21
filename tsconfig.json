@@ -22,17 +22,18 @@
     /* Paths */
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["lib/*"]
     }
   },
   "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx",
+    "lib/**/*.ts",
+    "lib/**/*.tsx",
     "vite.config.ts",
     "vitest.config.ts",
     "vitest.workspace.ts",
     "vitest.shims.d.ts",
     ".storybook/**/*.ts",
-    ".storybook/**/*.tsx"
+    ".storybook/**/*.tsx",
+    "lib/main.ts"
   ]
 }
