@@ -3,11 +3,11 @@
   "private": false,
   "version": "1.0.2",
   "type": "module",
-  "types": "./dist/index.d.ts",
-  "module": "./dist/index.es.js",
+  "module": "./dist/ui.es.js",
   "exports": {
     ".": {
       "import": "./dist/ui.es.js",
+      "types": "./dist/index.d.ts",
       "default": "./dist/ui.umd.js"
     },
     "./styles.css": {
