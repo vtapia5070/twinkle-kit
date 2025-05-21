@@ -25,18 +25,18 @@ export const Input = ({
 }: InputProps) => {
   // Base classes that are always applied
   const baseClasses =
-    'mt-1 block w-full rounded-md border shadow-sm focus:ring-2 focus:ring-offset-2 sm:text-sm';
+    'mt-1 block w-full rounded-md border shadow-sm text-gray-700 text-sm p-2 ';
 
   // State-specific classes using object syntax
   const stateClasses = clsx({
-    'border-gray-300 focus:border-blue-500 focus:ring-blue-500':
-      !error && !isDisabled,
-    'border-red-500 focus:border-red-500 focus:ring-red-500': error,
+    'border-gray-300': !error && !isDisabled,
+    'focus:border-blue-500': !error && !isDisabled,
+    'border-red-500 focus:border-red-500': error,
     'bg-gray-100 cursor-not-allowed border-gray-200': isDisabled,
   });
 
   return (
-    <div className={twMerge(className)}>
+    <div className={twMerge(className, 'tw')}>
       {label && (
         <label
           htmlFor={inputId}
