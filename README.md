@@ -76,9 +76,6 @@ While the styles are bundled, you can still customize the appearance using:
 # Install dependencies
 npm install
 
-# Start development server
-npm run dev
-
 # Run tests
 npm test
 
@@ -87,6 +84,16 @@ npm run build
 
 # Start Storybook
 npm run storybook
+```
+
+### Test Changes
+
+```bash
+# Link current working state in ./twinkle-kit
+npm link
+
+# In another repo link twinkle-kit
+npm link twinkle-kit
 ```
 
 ## Component Generation
