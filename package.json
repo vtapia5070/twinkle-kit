@@ -20,7 +20,7 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && npm run build:css",
     "build:css": "npx @tailwindcss/cli  -m -i ./lib/styles.css -o ./dist/styles.css --minify",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
