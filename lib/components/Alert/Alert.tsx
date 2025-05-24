@@ -1,4 +1,5 @@
 import { twMerge } from 'tailwind-merge';
+import { clsx } from 'clsx';
 
 export enum AlertType {
   Info = 'info',
@@ -13,26 +14,17 @@ export interface AlertProps {
   message: string;
 }
 
-export const Alert = ({ className = '', type, message }: AlertProps) => {
-  let styles = '';
-
-  switch (type) {
-    case AlertType.Info:
-      styles = 'bg-blue-500 text-white ';
-      break;
-    case AlertType.Error:
-      styles = 'bg-red-500 text-white ';
-      break;
-    case AlertType.Success:
-      styles = 'bg-green-500 text-white ';
-      break;
-    case AlertType.Warning:
-      styles = 'bg-orange-500 text-white ';
-      break;
-    default:
-      styles = 'bg-purple-3 text-purple-11';
-      break;
-  }
+export const Alert = ({
+  className = '',
+  type = AlertType.Info,
+  message,
+}: AlertProps) => {
+  let styles = clsx({
+    'bg-purple-3 text-purple-11': type === AlertType.Info,
+    'bg-red-500 text-white': type === AlertType.Error,
+    'bg-green-500 text-white': type === AlertType.Success,
+    'bg-orange-500 text-white': type === AlertType.Warning,
+  });
 
   return (
     <div className="w-full">

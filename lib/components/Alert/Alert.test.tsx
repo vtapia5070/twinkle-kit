@@ -17,7 +17,7 @@ describe('Alert', () => {
       <Alert message="test" type={AlertType.Info} />
     );
 
-    expect(getByText('test')).toHaveClass('bg-blue-500 text-white');
+    expect(getByText('test')).toHaveClass('bg-purple-3 text-purple-11');
   });
 
   it('renders with type error', () => {

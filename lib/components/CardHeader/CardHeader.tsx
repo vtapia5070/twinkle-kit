@@ -8,7 +8,7 @@ export interface CardHeaderProps {
 export const CardHeader = ({ className = '', children }: CardHeaderProps) => {
   return (
     <div className={twMerge(className, 'tw')}>
-      <h5 className="mb-4 text-xl font-bold tracking-tight text-gray-900">
+      <h5 className="mb-4 text-xl font-bold tracking-tight text-gray-12">
         {children}
       </h5>
     </div>
