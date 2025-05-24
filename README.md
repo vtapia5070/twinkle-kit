@@ -28,6 +28,7 @@ pnpm add twinkle-kit
 
 ```jsx
 import { Input } from 'twinkle-kit';
+import 'twinkle-kit/styles.css';
 
 function App() {
   return (
