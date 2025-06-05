@@ -1,4 +1,4 @@
-import { render, getByText } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
 import { Alert, AlertType } from './Alert';
 
@@ -13,34 +13,34 @@ describe('Alert', () => {
   });
 
   it('renders with type info', () => {
-    const { getByText } = render(
+    const { container } = render(
       <Alert message="test" type={AlertType.Info} />
     );
-
-    expect(getByText('test')).toHaveClass('bg-purple-3 text-purple-11');
+    const alertDiv = container.firstChild as HTMLElement;
+    expect(alertDiv).toHaveClass('bg-purple-3', 'text-purple-11');
   });
 
   it('renders with type error', () => {
-    const { getByText } = render(
+    const { container } = render(
       <Alert message="test" type={AlertType.Error} />
     );
-
-    expect(getByText('test')).toHaveClass('bg-red-500 text-white');
+    const alertDiv = container.firstChild as HTMLElement;
+    expect(alertDiv).toHaveClass('bg-red-500', 'text-white');
   });
 
   it('renders with type success', () => {
-    const { getByText } = render(
+    const { container } = render(
       <Alert message="test" type={AlertType.Success} />
     );
-
-    expect(getByText('test')).toHaveClass('bg-green-500 text-white');
+    const alertDiv = container.firstChild as HTMLElement;
+    expect(alertDiv).toHaveClass('bg-green-500', 'text-white');
   });
 
   it('renders with type warning', () => {
-    const { getByText } = render(
+    const { container } = render(
       <Alert message="test" type={AlertType.Warning} />
     );
-
-    expect(getByText('test')).toHaveClass('bg-orange-500 text-white');
+    const alertDiv = container.firstChild as HTMLElement;
+    expect(alertDiv).toHaveClass('bg-orange-500', 'text-white');
   });
 });

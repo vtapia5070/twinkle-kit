@@ -5,9 +5,6 @@ import { Alert, AlertType } from './Alert';
 const meta = {
   title: 'Components/Alert',
   component: Alert,
-  parameters: {
-    layout: 'centered',
-  },
   tags: ['autodocs'],
   argTypes: {
     type: {

@@ -1,15 +1,17 @@
 @import 'tailwindcss';
+@import './colors.css';
 
 @theme {
-  --color-purple-3: #f6edff;
-  --color-purple-8: #bf8df6;
-  --color-purple-9: #943cdd;
-  --color-purple-10: #8531c8;
-  --color-purple-11: #8632ca;
-  --color-purple-contrast: #fff;
+  --color-purple-11: var(--color-purple-11);
+  --color-purple-3: var(--color-purple-3);
+  --color-purple-8: var(--color-purple-8);
+  --color-purple-9: var(--color-purple-9);
+  --color-purple-10: var(--color-purple-10);
+  --color-purple-11: var(--color-purple-11);
+  --color-purple-contrast: var(--color-purple-contrast);
 
-  --color-gray-2: #f9f9fb;
-  --color-gray-3: #eff0f3;
-  --color-gray-12: #1e1f24;
-  --color-background: #fff;
+  --color-gray-2: var(--color-gray-2);
+  --color-gray-3: var(--color-gray-3);
+  --color-gray-12: var(--color-gray-12);
+  --color-light-background: var(--color-light-background);
 }

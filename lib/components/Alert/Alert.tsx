@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { clsx } from 'clsx';
 
@@ -12,13 +13,17 @@ export interface AlertProps {
   className?: string;
   type?: AlertType;
   message: string;
+  onClose?: () => void;
 }
 
 export const Alert = ({
   className = '',
   type = AlertType.Info,
   message,
+  onClose,
 }: AlertProps) => {
+  const [isVisible, setIsVisible] = useState(true);
+
   let styles = clsx({
     'bg-purple-3 text-purple-11': type === AlertType.Info,
     'bg-red-500 text-white': type === AlertType.Error,
@@ -26,11 +31,25 @@ export const Alert = ({
     'bg-orange-500 text-white': type === AlertType.Warning,
   });
 
+  const handleClose = () => {
+    setIsVisible(false);
+    if (onClose) onClose();
+  };
+
   return (
-    <div className="w-full">
-      <div className={twMerge('rounded-lg p-4', styles, className)}>
-        {message}
+    isVisible && (
+      <div
+        className={twMerge(
+          'w-full rounded-lg p-4 flex justify-between',
+          styles,
+          className
+        )}
+      >
+        <p className="">{message}</p>
+        <div className="close" onClick={handleClose}>
+          x
+        </div>
       </div>
-    </div>
+    )
   );
 };
