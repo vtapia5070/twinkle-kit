@@ -3,6 +3,13 @@ import '../lib/styles.css';
 
 const preview: Preview = {
   parameters: {
+    backgrounds: {
+      options: {
+        // 👇 Default options
+        dark: { name: 'Dark', value: '#111' },
+        light: { name: 'Light', value: '#fff' },
+      },
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,

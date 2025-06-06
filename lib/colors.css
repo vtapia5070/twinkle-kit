@@ -9,7 +9,7 @@
   --color-gray-2: #f9f9fb;
   --color-gray-3: #eff0f3;
   --color-gray-12: #1e1f24;
-  --color-light-background: #fff;
+  --color-background: #fff;
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -23,6 +23,6 @@
     --color-gray-2: #19191b;
     --color-gray-3: #222325;
     --color-gray-12: #eeeef0;
-    --color-light-background: #111;
+    --color-background: #111;
   }
 }

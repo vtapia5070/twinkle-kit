@@ -4,7 +4,7 @@
 .light-theme {
   --purple-1: #fdfcff;
   --purple-2: #fbf7ff;
-  --purple-3: #f6edff; // alert transparent/light background (used for card also active dropdown background)
+  --purple-3: #f6edff;  // alert transparent/light background (used for card also active dropdown background)
   --purple-4: #f0e1ff;
   --purple-5: #e8d4ff;
   --purple-6: #dec3ff;
