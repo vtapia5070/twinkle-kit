@@ -31,7 +31,7 @@
     "build-storybook": "storybook build",
     "generate": "plop",
     "prepublishOnly": "npm run build",
-    "chromatic": "npx chromatic --project-token=chpt_33a9e154db706ea"
+    "chromatic": "npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN"
   },
   "dependencies": {
     "clsx": "^2.1.1",
