@@ -1,4 +1,6 @@
-:root {
+:root,
+.light,
+.light-theme {
   --color-purple-3: #f6edff;
   --color-purple-8: #bf8df6;
   --color-purple-9: #943cdd;
@@ -11,8 +13,11 @@
   --color-gray-12: #1e1f24;
   --color-background: #fff;
 }
+
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root,
+  .dark,
+  .dark-theme {
     --color-purple-3: #2e1943;
     --color-purple-8: #864fbc;
     --color-purple-9: #943cdd;

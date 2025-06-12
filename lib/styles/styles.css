@@ -15,3 +15,8 @@
   --color-gray-12: var(--color-gray-12);
   --color-background: var(--color-background);
 }
+
+body {
+  color: var(--color-gray-12);
+  background-color: var(--color-background);
+}

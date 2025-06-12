@@ -29,8 +29,8 @@ export const Input = ({
 
   // State-specific classes using object syntax
   const stateClasses = clsx({
-    'border-gray-300': !error && !isDisabled,
-    'focus:border-purple-8': !error && !isDisabled,
+    'border-gray-300 focus:border-purple-8 focus:outline-purple-8':
+      !error && !isDisabled,
     'border-red-500 focus:border-red-500': error,
     'bg-gray-100 cursor-not-allowed border-gray-200': isDisabled,
   });
@@ -38,10 +38,7 @@ export const Input = ({
   return (
     <div className={twMerge(className, 'tw')}>
       {label && (
-        <label
-          htmlFor={inputId}
-          className="block text-sm font-medium text-gray-12"
-        >
+        <label htmlFor={inputId} className="block text-sm font-medium">
           {label}
           {required && <span className="text-red-500 ml-1">*</span>}
         </label>
