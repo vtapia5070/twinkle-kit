@@ -9,7 +9,7 @@ export const CardDescription = ({
 }: CardDescriptionProps) => {
   return (
     <div className={className}>
-      <p className="font-normal text-gray-12 dark:text-gray-400">{children}</p>
+      <p className="font-normal text-text-primary">{children}</p>
     </div>
   );
 };

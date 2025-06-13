@@ -1,33 +1,73 @@
 :root,
 .light,
 .light-theme {
-  --color-purple-3: #f6edff;
-  --color-purple-8: #bf8df6;
-  --color-purple-9: #943cdd;
-  --color-purple-10: #8531c8;
-  --color-purple-11: #8632ca;
-  --color-purple-contrast: #fff;
+  /* Primary Colors */
+  --color-primary-1: #f6edff; // alert transparent/light background (used for card also active dropdown background)
+  --color-primary-8: #bf8df6; // focus (border on active input)
+  --color-primary-9: #943cdd; //  button hover
+  --color-primary-10: #8531c8; // button
+  --color-primary-11: #8632ca; // accent text on light purple (purple-3 light background for card) also used for pills
 
-  --color-gray-2: #f9f9fb;
-  --color-gray-3: #eff0f3;
-  --color-gray-12: #1e1f24;
-  --color-background: #fff;
+  /* Neutral Colors */
+  --color-neutral-1: #ffffff; // text on purple (buttons primary)
+  --color-neutral-2: #f9f9fb; // gray background
+  --color-neutral-3: #eff0f3; // button disabled
+  --color-neutral-11: #1e1f24; // text color on white (inputs)
+
+  /* Semantic Colors */
+  --color-background: var(--color-neutral-1);
+  --color-surface: var(--color-neutral-2);
+  --color-surface-hover: var(--color-neutral-3);
+  --color-border: var(--color-neutral-3);
+  --color-text-primary: var(--color-neutral-11);
+  --color-text-secondary: #6c6e7a;
+  --color-text-disabled: #b3b5c0;
+  --color-primary: var(--color-primary-8);
+  --color-primary-hover: var(--color-primary-9);
+  --color-primary-active: var(--color-primary-10);
+  --color-primary-disabled: var(--color-primary-1);
+  --color-primary-contrast: var(--color-neutral-1);
+
+  /* State Colors */
+  --color-error: #ef4444;
+  --color-success: #22c55e;
+  --color-warning: #f97316;
 }
 
 @media (prefers-color-scheme: dark) {
   :root,
   .dark,
   .dark-theme {
-    --color-purple-3: #2e1943;
-    --color-purple-8: #864fbc;
-    --color-purple-9: #943cdd;
-    --color-purple-10: #862acd;
-    --color-purple-11: #d19cff;
-    --color-purple-contrast: #fff;
+    /* Primary Colors */
+    --color-primary-1: #2e1943; // alert transparent/light background (used for card also active dropdown background)
+    --color-primary-8: #864fbc; // focus (border on active input)
+    --color-primary-9: #943cdd; //  button
+    --color-primary-10: #862acd; // button hover
+    --color-primary-11: #d19cff; // accent text on light purple (purple-3 light background for card) also used for pills
 
-    --color-gray-2: #19191b;
-    --color-gray-3: #222325;
-    --color-gray-12: #eeeef0;
-    --color-background: #111;
+    /* Neutral Colors */
+    --color-neutral-1: #000000;
+    --color-neutral-2: #19191b; // grey background
+    --color-neutral-3: #222325; // button disabled
+    --color-neutral-11: #eeeef0; // text color on dark (inputs)
+
+    /* Semantic Colors */
+    --color-background: var(--color-neutral-1);
+    --color-surface: var(--color-neutral-2);
+    --color-surface-hover: var(--color-neutral-3);
+    --color-border: #2b2d30;
+    --color-text-primary: var(--color-neutral-11);
+    --color-text-secondary: #4f515a;
+    --color-text-disabled: #3d3f45;
+    --color-primary: var(--color-primary-8);
+    --color-primary-hover: var(--color-primary-9);
+    --color-primary-active: var(--color-primary-10);
+    --color-primary-disabled: var(--color-primary-1);
+    --color-primary-contrast: var(--color-neutral-1);
+
+    /* State Colors */
+    --color-error: #ef4444;
+    --color-success: #22c55e;
+    --color-warning: #f97316;
   }
 }
