@@ -29,10 +29,10 @@ export const Input = ({
 
   // State-specific classes using object syntax
   const stateClasses = clsx({
-    'border-border focus:border-primary focus:outline-primary':
+    'border-border focus:border-primary-8 focus:outline-primary-8':
       !error && !isDisabled,
     'border-error focus:border-error': error,
-    'bg-surface cursor-not-allowed border-border-disabled': isDisabled,
+    'bg-neutral-3 cursor-not-allowed border-text-disabled': isDisabled,
   });
 
   return (

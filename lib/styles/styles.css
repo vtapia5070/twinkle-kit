@@ -2,20 +2,19 @@
 @import './colors.css';
 
 @theme {
-  /* Primary Colors */
   --color-primary-1: var(--color-primary-1);
+  --color-primary-3: var(--color-primary-3);
   --color-primary-8: var(--color-primary-8);
   --color-primary-9: var(--color-primary-9);
   --color-primary-10: var(--color-primary-10);
   --color-primary-11: var(--color-primary-11);
 
-  /* Neutral Colors */
   --color-neutral-1: var(--color-neutral-1);
   --color-neutral-2: var(--color-neutral-2);
   --color-neutral-3: var(--color-neutral-3);
+  --color-neutral-8: var(--color-neutral-8);
   --color-neutral-11: var(--color-neutral-11);
 
-  /* Semantic Colors */
   --color-background: var(--color-background);
   --color-surface: var(--color-surface);
   --color-surface-hover: var(--color-surface-hover);
@@ -29,7 +28,9 @@
   --color-primary-disabled: var(--color-primary-disabled);
   --color-primary-contrast: var(--color-primary-contrast);
 
-  /* State Colors */
+  --color-alert-info-bg: var(--color-alert-info-bg);
+  --color-alert-info-text: var(--color-alert-info-text);
+
   --color-error: var(--color-error);
   --color-success: var(--color-success);
   --color-warning: var(--color-warning);

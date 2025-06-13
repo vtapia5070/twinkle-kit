@@ -25,10 +25,10 @@ export const Alert = ({
   const [isVisible, setIsVisible] = useState(true);
 
   let styles = clsx({
-    'bg-purple-3 text-purple-11': type === AlertType.Info,
-    'bg-red-500 text-white': type === AlertType.Error,
-    'bg-green-500 text-white': type === AlertType.Success,
-    'bg-orange-500 text-white': type === AlertType.Warning,
+    'bg-primary-3 text-primary-11': type === AlertType.Info,
+    'bg-error text-primary-contrast': type === AlertType.Error,
+    'bg-success text-primary-contrast': type === AlertType.Success,
+    'bg-warning text-primary-contrast': type === AlertType.Warning,
   });
 
   const handleClose = () => {
