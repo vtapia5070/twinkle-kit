@@ -11,7 +11,7 @@
 
   /* Neutral Colors */
   --color-neutral-1: #ffffff; /* light background */
-  --color-neutral-2: #fcfcfc; /* subtle background */
+  --color-neutral-2: #f9f9fb; /* card background */
   --color-neutral-3: #f5f5f5; /* disabled states */
   --color-neutral-8: #8b8d98; /* gray color */
   --color-neutral-11: #1a1a1a; /* dark text */
@@ -54,8 +54,8 @@
 
     /* Neutral Colors */
     --color-neutral-1: #111111; /* dark background */
-    --color-neutral-2: #1a1a1a; /* subtle background */
-    --color-neutral-3: #262626; /* disabled states */
+    --color-neutral-2: #19191b; /* card background */
+    --color-neutral-3: #222325; /* disabled states */
     --color-neutral-8: #8b8d98; /* gray color */
     --color-neutral-11: #f5f5f5; /* light text */
 
