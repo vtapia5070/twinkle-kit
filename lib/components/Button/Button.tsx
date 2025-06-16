@@ -24,7 +24,7 @@ export const Button = ({
         'px-4 py-2 text-sm rounded-md shadow-sm focus:outline-none transition-colors',
         `${
           disabled || isLoading
-            ? 'bg-primary-disabled text-text-disabled cursor-not-allowed'
+            ? 'bg-primary-disabled text-primary-contrast cursor-not-allowed'
             : 'bg-primary-active text-primary-contrast hover:bg-primary-10'
         }`,
         className

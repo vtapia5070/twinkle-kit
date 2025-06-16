@@ -14,6 +14,7 @@
   --color-neutral-2: #f9f9fb; /* card background */
   --color-neutral-3: #f5f5f5; /* disabled states */
   --color-neutral-8: #8b8d98; /* gray color */
+  --color-neutral-9: #6c6e79; /* button disabled background */
   --color-neutral-11: #1a1a1a; /* dark text */
 
   /* Semantic Colors */
@@ -27,8 +28,8 @@
   --color-primary: var(--color-primary-9);
   --color-primary-hover: var(--color-primary-10);
   --color-primary-active: var(--color-primary-9);
-  --color-primary-disabled: var(--color-primary-1);
-  --color-primary-contrast: var(--color-neutral-1);
+  --color-primary-disabled: var(--color-neutral-9);
+  --color-primary-contrast: #ffffff;
 
   /* Alert Colors */
   --color-alert-info-bg: var(--color-primary-3);
@@ -57,6 +58,8 @@
     --color-neutral-2: #19191b; /* card background */
     --color-neutral-3: #222325; /* disabled states */
     --color-neutral-8: #8b8d98; /* gray color */
+    --color-neutral-9: #6c6e79; /* button disabled background */
+    --color-neutral-10: #797b86; /* button disabled background */
     --color-neutral-11: #f5f5f5; /* light text */
 
     /* Semantic Colors */
@@ -70,8 +73,8 @@
     --color-primary: var(--color-primary-9);
     --color-primary-hover: var(--color-primary-10);
     --color-primary-active: var(--color-primary-9);
-    --color-primary-disabled: var(--color-primary-1);
-    --color-primary-contrast: var(--color-neutral-1);
+    --color-primary-disabled: var(--color-neutral-10);
+    --color-primary-contrast: #ffffff;
 
     /* Alert Colors */
     --color-alert-info-bg: var(--color-primary-3);
