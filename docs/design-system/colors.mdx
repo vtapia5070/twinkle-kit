@@ -3,31 +3,102 @@ import { ColorPalette, ColorItem } from '@storybook/blocks';
 
 <Meta title="System/Colors" />
 
+# Color System
+
+Our design system is built on a comprehensive color palette that supports both light and dark themes seamlessly.
+
 <ColorPalette>
   <ColorItem
-    title="Accent"
-    subtitle="Purple"
+    title="Primary Colors"
+    subtitle="Purple accent colors"
     colors={{
-      'color-purple-3': '#f6edff',
-      'color-purple-8': '#bf8df6',
-      'color-purple-9': '#943cdd',
-      'color-purple-10': '#8531c8',
-      'color-purple-11': '#8632ca',
+      'primary-1': '#fdfcfe',
+      'primary-3': '#f6edff',
+      'primary-8': '#b794f6',
+      'primary-9': '#943cdd',
+      'primary-10': '#7c2d9a',
+      'primary-11': '#8632ca',
     }}
   />
   <ColorItem
-    title="Gray"
-    subtitle="Gray"
+    title="Neutral Colors"
+    subtitle="Gray scale"
     colors={{
-      'color-gray-2': '#f9f9fb',
-      'color-gray-12': '#1e1f24',
+      'neutral-1': '#ffffff',
+      'neutral-2': '#f9f9fb',
+      'neutral-3': '#f5f5f5',
+      'neutral-8': '#8b8d98',
+      'neutral-9': '#6c6e79',
+      'neutral-10': '#797b86',
+      'neutral-11': '#1a1a1a',
     }}
   />
   <ColorItem
-    title="Background"
-    subtitle="Contrast Background"
+    title="Semantic Colors"
+    subtitle="Component-specific colors"
     colors={{
-      'color-background': '#fff',
+      background: 'var(--color-background)',
+      surface: 'var(--color-surface)',
+      'surface-hover': 'var(--color-surface-hover)',
+      border: 'var(--color-border)',
+      'text-primary': 'var(--color-text-primary)',
+      'text-secondary': 'var(--color-text-secondary)',
+      'text-disabled': 'var(--color-text-disabled)',
+    }}
+  />
+  <ColorItem
+    title="Primary Semantic"
+    subtitle="Button and accent colors"
+    colors={{
+      primary: 'var(--color-primary)',
+      'primary-hover': 'var(--color-primary-hover)',
+      'primary-active': 'var(--color-primary-active)',
+      'primary-disabled': 'var(--color-primary-disabled)',
+      'primary-contrast': 'var(--color-primary-contrast)',
+    }}
+  />
+  <ColorItem
+    title="Alert Colors"
+    subtitle="Info alert specific"
+    colors={{
+      'alert-info-bg': 'var(--color-alert-info-bg)',
+      'alert-info-text': 'var(--color-alert-info-text)',
+    }}
+  />
+  <ColorItem
+    title="State Colors"
+    subtitle="Error, success, warning"
+    colors={{
+      error: '#ef4444',
+      success: '#22c55e',
+      warning: '#f97316',
     }}
   />
 </ColorPalette>
+
+## Usage
+
+### Light Theme
+
+- **Background**: `#ffffff` (neutral-1)
+- **Surface/Cards**: `#f9f9fb` (neutral-2)
+- **Primary/Buttons**: `#943cdd` (primary-9)
+- **Text**: `#1a1a1a` (neutral-11)
+
+### Dark Theme
+
+- **Background**: `#111111` (neutral-1)
+- **Surface/Cards**: `#19191b` (neutral-2)
+- **Primary/Buttons**: `#943cdd` (primary-9)
+- **Text**: `#f5f5f5` (neutral-11)
+
+### Button States
+
+- **Normal**: `bg-primary-9` with `text-primary-contrast`
+- **Hover**: `bg-primary-10`
+- **Disabled**: `bg-primary-disabled` (#797b86)
+
+### Alert Types
+
+- **Info**: `bg-primary-3` (#f6edff) with `text-primary-11` (#8632ca)
+- **Error/Success/Warning**: Colored background with white text
