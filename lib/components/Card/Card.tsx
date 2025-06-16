@@ -8,7 +8,7 @@ export interface CardProps {
 export const Card = ({ className = '', children }: CardProps) => {
   return (
     <div className={twMerge(className, 'tw')}>
-      <div className="m-6 p-6 bg-purple-3 border text-gray-12 border-gray-200 rounded-lg shadow-sm hover:bg-gray-10">
+      <div className="m-6 p-6 border text-text-primary bg-surface border-border rounded-lg shadow-sm">
         {children}
       </div>
     </div>

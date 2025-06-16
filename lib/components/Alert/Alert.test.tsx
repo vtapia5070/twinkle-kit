@@ -17,7 +17,7 @@ describe('Alert', () => {
       <Alert message="test" type={AlertType.Info} />
     );
     const alertDiv = container.firstChild as HTMLElement;
-    expect(alertDiv).toHaveClass('bg-purple-3', 'text-purple-11');
+    expect(alertDiv).toHaveClass('bg-primary-3', 'text-primary-11');
   });
 
   it('renders with type error', () => {
@@ -25,7 +25,7 @@ describe('Alert', () => {
       <Alert message="test" type={AlertType.Error} />
     );
     const alertDiv = container.firstChild as HTMLElement;
-    expect(alertDiv).toHaveClass('bg-red-500', 'text-white');
+    expect(alertDiv).toHaveClass('bg-error', 'text-primary-contrast');
   });
 
   it('renders with type success', () => {
@@ -33,7 +33,7 @@ describe('Alert', () => {
       <Alert message="test" type={AlertType.Success} />
     );
     const alertDiv = container.firstChild as HTMLElement;
-    expect(alertDiv).toHaveClass('bg-green-500', 'text-white');
+    expect(alertDiv).toHaveClass('bg-success', 'text-primary-contrast');
   });
 
   it('renders with type warning', () => {
@@ -41,6 +41,6 @@ describe('Alert', () => {
       <Alert message="test" type={AlertType.Warning} />
     );
     const alertDiv = container.firstChild as HTMLElement;
-    expect(alertDiv).toHaveClass('bg-orange-500', 'text-white');
+    expect(alertDiv).toHaveClass('bg-warning', 'text-primary-contrast');
   });
 });

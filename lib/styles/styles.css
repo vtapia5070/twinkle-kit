@@ -1,0 +1,44 @@
+@import 'tailwindcss';
+@import './colors.css';
+
+@theme {
+  --color-primary-1: var(--color-primary-1);
+  --color-primary-3: var(--color-primary-3);
+  --color-primary-8: var(--color-primary-8);
+  --color-primary-9: var(--color-primary-9);
+  --color-primary-10: var(--color-primary-10);
+  --color-primary-11: var(--color-primary-11);
+
+  --color-neutral-1: var(--color-neutral-1);
+  --color-neutral-2: var(--color-neutral-2);
+  --color-neutral-3: var(--color-neutral-3);
+  --color-neutral-8: var(--color-neutral-8);
+  --color-neutral-9: var(--color-neutral-9);
+  --color-neutral-10: var(--color-neutral-10);
+  --color-neutral-11: var(--color-neutral-11);
+
+  --color-background: var(--color-background);
+  --color-surface: var(--color-surface);
+  --color-surface-hover: var(--color-surface-hover);
+  --color-border: var(--color-border);
+  --color-text-primary: var(--color-text-primary);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-text-disabled: var(--color-text-disabled);
+  --color-primary: var(--color-primary);
+  --color-primary-hover: var(--color-primary-hover);
+  --color-primary-active: var(--color-primary-active);
+  --color-primary-disabled: var(--color-primary-disabled);
+  --color-primary-contrast: var(--color-primary-contrast);
+
+  --color-alert-info-bg: var(--color-alert-info-bg);
+  --color-alert-info-text: var(--color-alert-info-text);
+
+  --color-error: var(--color-error);
+  --color-success: var(--color-success);
+  --color-warning: var(--color-warning);
+}
+
+body {
+  color: var(--color-text-primary);
+  background-color: var(--color-background);
+}
