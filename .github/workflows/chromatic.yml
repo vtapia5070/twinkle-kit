@@ -1,0 +1,28 @@
+name: 'Chromatic'
+
+on: push
+
+jobs:
+  chromatic:
+    name: Run Chromatic
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.12.0
+      - name: Install dependencies
+        # ⚠️ See your package manager's documentation for the correct command to install dependencies in a CI environment.
+        run: npm ci
+      - name: Run Chromatic
+        uses: chromaui/action@latest
+        with:
+          # ⚠️ Make sure to configure a `CHROMATIC_PROJECT_TOKEN` repository secret
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          onlyChanged: true # 👈 Required option to enable TurboSnap
+          exitZeroOnChanges: false # 👈 Fail workflow if changes are found
+          autoAcceptChanges: 'main' # 👈 Option to accept all changes on main
+          skip: 'dependabot/**' # 👈 Option to skip Chromatic for certain branches
