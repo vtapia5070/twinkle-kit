@@ -49,7 +49,7 @@ jobs:
       # Add a comment to the PR with the Chromatic link
       - name: Add Chromatic link to PR
         if: github.event_name == 'pull_request'
-        uses: mshick/add-pr-comment@v3
+        uses: mshick/add-pr-comment@v2
         with:
           message: |
             ## 📚 Storybook Deployment
