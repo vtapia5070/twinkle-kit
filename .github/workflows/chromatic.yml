@@ -6,9 +6,6 @@ on:
   pull_request:
     branches: [main, master]
 
-permissions:
-  pull-requests: write
-
 jobs:
   chromatic:
     name: Run Chromatic
@@ -48,10 +45,6 @@ jobs:
           onlyChanged: ${{ github.event_name == 'pull_request' }}
           # Always exit with 0 for main branch to allow the workflow to continue
           exitZeroOnChanges: ${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master' || github.event_name == 'push' }}
-      - name: Get branch name (pull request)
-        if: github.event_name == 'pull_request'
-        shell: bash
-        run: echo "BRANCH_NAME=$(echo ${GITHUB_HEAD_REF} | tr / -)" >> $GITHUB_ENV
       # Add a comment to the PR with the Chromatic link
       - name: Add Chromatic link to PR
         if: github.event_name == 'pull_request'
@@ -61,7 +54,7 @@ jobs:
           message: |
             ## 📚 Storybook Deployment
 
-            ✅ Build completed. A preview of your Storybook has been deployed.
+            ✅ Build completed! Here are your deployment links:
 
-            🔗 [storybook](https://${{ env.BRANCH_NAME }}--682e94b4a008f5591a2429cf.chromatic.com)
-            🔗 [chromatic build](https://www.chromatic.com/library?appId=682e94b4a008f5591a2429cf&branch=${{ env.BRANCH_NAME }})
+            🔗 [View Storybook](${{ steps.chromatic.outputs.storybookUrl }})
+            🔍 [Inspect with Chromatic](${{ steps.chromatic.outputs.buildUrl }})
