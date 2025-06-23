@@ -1,1 +1,2 @@
-npm test
+# Run only linting in pre-commit to keep it fast
+npm run lint
