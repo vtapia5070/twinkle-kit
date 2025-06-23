@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [main, master]
 
+permissions:
+  pull-requests: write
+
 jobs:
   chromatic:
     name: Run Chromatic
@@ -33,10 +36,28 @@ jobs:
 
       - name: Publish to Chromatic
         uses: chromaui/action@latest
+        id: chromatic
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           buildScriptName: build-storybook
           storybookBuildDir: 'storybook-static'
           exitOnceUploaded: true
-          autoAcceptChanges: true
-          exitZeroOnChanges: true
+          # Auto-accept changes only on the main branch
+          autoAcceptChanges: ${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master' }}
+          # Only enable TurboSnap for PRs, not for main branch
+          onlyChanged: ${{ github.event_name == 'pull_request' }}
+          # Always exit with 0 for main branch to allow the workflow to continue
+          exitZeroOnChanges: ${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master' || github.event_name == 'push' }}
+      # Add a comment to the PR with the Chromatic link
+      - name: Add Chromatic link to PR
+        if: github.event_name == 'pull_request'
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          header: storybook-deployment
+          message: |
+            ## 📚 Storybook Deployment
+
+            ✅ Build completed! Here are your deployment links:
+
+            🔗 [View Storybook](${{ steps.chromatic.outputs.storybookUrl }})
+            🔍 [Inspect with Chromatic](${{ steps.chromatic.outputs.buildUrl }})

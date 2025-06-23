@@ -1,16 +1,12 @@
 # Twinkle Kit
 
-A modern React component library built with Tailwind CSS.
+A modern React component library built with Tailwind CSS, with visual testing powered by Chromatic.
 
-## Installation
+## 📖 Storybook
 
-```bash
-npm install twinkle-kit
-# or
-yarn add twinkle-kit
-# or
-pnpm add twinkle-kit
-```
+View the interactive component library and documentation:
+
+[![Open in Storybook](https://img.shields.io/badge/Open%20in-Storybook-FF4785?style=for-the-badge&logo=storybook)](https://main--682e94b4a008f5591a2429cf.chromatic.com)
 
 ## Tech Stack
 
@@ -23,6 +19,16 @@ pnpm add twinkle-kit
   - Prettier for code formatting
   - Husky for git hooks
   - lint-staged for pre-commit checks
+
+## Installation
+
+````bash
+npm install twinkle-kit
+# or
+yarn add twinkle-kit
+# or
+pnpm add twinkle-kit
+```
 
 ## Usage
 
@@ -185,6 +191,10 @@ The project uses Vitest for testing with:
 - Jest DOM for DOM testing utilities
 - User Event for simulating user interactions
 
+### Visual Testing
+
+This project uses [Chromatic](https://www.chromatic.com/) for visual testing and component documentation. Every pull request use GH actions to generate a preview of the Storybook that you can view and test. The url format will be `https://www.chromatic.com/library?appId=682e94b4a008f5591a2429cf&branch={{branch-name}}` and commented in the PR.
+
 ## Contributing
 
 1. Fork the repository
@@ -196,3 +206,4 @@ The project uses Vitest for testing with:
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+````
