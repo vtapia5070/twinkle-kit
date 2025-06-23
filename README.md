@@ -28,6 +28,7 @@ npm install twinkle-kit
 yarn add twinkle-kit
 # or
 pnpm add twinkle-kit
+```
 
 ## Usage
 
@@ -44,7 +45,7 @@ function App() {
     />
   );
 }
-````
+```
 
 ## Styling
 
@@ -205,3 +206,4 @@ This project uses [Chromatic](https://www.chromatic.com/) for visual testing and
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+````
