@@ -60,6 +60,5 @@ jobs:
 
             ✅ Build completed. A preview of your Storybook has been deployed to:
 
-            🔗 [$CHANGE_VIEWER_URL]($CHANGE_VIEWER_URL)
-
-            _This is a preview of how your changes will appear in the Storybook._
+            🔗 [storybook](https://${{ github.ref }}--682e94b4a008f5591a2429cf.chromatic.com)
+            🔗 [chromatic build](https://www.chromatic.com/library?appId=682e94b4a008f5591a2429cf&branch=${{ github.ref }})
