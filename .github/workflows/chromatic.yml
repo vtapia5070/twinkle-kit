@@ -44,10 +44,8 @@ jobs:
           exitOnceUploaded: true
           # Auto-accept changes only on the main branch
           autoAcceptChanges: ${{ github.ref == 'refs/heads/main' }}
-          # Only enable TurboSnap for PRs, not for main branch
-          onlyChanged: ${{ github.event_name == 'pull_request' }}
           # Always exit with 0 for main branch to allow the workflow to continue
-          exitZeroOnChanges: ${{ github.ref == 'refs/heads/main' || github.event_name == 'push' }}
+          exitZeroOnChanges: ${{ github.ref == 'refs/heads/main'}}
 
       # Add a comment to the PR with the Chromatic link
       - name: Add Chromatic link to PR
