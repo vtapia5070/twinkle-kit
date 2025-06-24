@@ -47,11 +47,11 @@
   .dark-theme {
     /* Primary Colors */
     --color-primary-1: #1a0d21; /* darkest purple for backgrounds */
-    --color-primary-3: #f6edff; /* light purple for alert backgrounds (same in dark) */
+    --color-primary-3: #2e1943; /* dark purple for alert backgrounds (same in dark) */
     --color-primary-8: #8b5fbf; /* focus states */
     --color-primary-9: #943cdd; /* main accent/button color */
     --color-primary-10: #a855f7; /* button hover (lighter) */
-    --color-primary-11: #8632ca; /* accent text */
+    --color-primary-11: #d19cff; /* accent text */
 
     /* Neutral Colors */
     --color-neutral-1: #111111; /* dark background */
