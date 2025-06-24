@@ -30,7 +30,6 @@
     "lib/**/*.tsx",
     "vite.config.ts",
     "vitest.config.ts",
-    "vitest.workspace.ts",
     "vitest.shims.d.ts",
     ".storybook/**/*.ts",
     ".storybook/**/*.tsx",

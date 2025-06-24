@@ -2,9 +2,9 @@ name: 'Chromatic'
 
 on:
   push:
-    branches: [main, master]
+    branches: [main]
   pull_request:
-    branches: [main, master]
+    branches: [main]
 
 permissions:
   pull-requests: write
@@ -43,11 +43,10 @@ jobs:
           storybookBuildDir: 'storybook-static'
           exitOnceUploaded: true
           # Auto-accept changes only on the main branch
-          autoAcceptChanges: ${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master' }}
-          # Only enable TurboSnap for PRs, not for main branch
-          onlyChanged: ${{ github.event_name == 'pull_request' }}
+          autoAcceptChanges: ${{ github.ref == 'refs/heads/main' }}
           # Always exit with 0 for main branch to allow the workflow to continue
-          exitZeroOnChanges: ${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master' || github.event_name == 'push' }}
+          exitZeroOnChanges: ${{ github.ref == 'refs/heads/main'}}
+
       # Add a comment to the PR with the Chromatic link
       - name: Add Chromatic link to PR
         if: github.event_name == 'pull_request'
@@ -61,3 +60,5 @@ jobs:
 
             🔗 [View Storybook](${{ steps.chromatic.outputs.storybookUrl }})
             🔍 [Inspect with Chromatic](${{ steps.chromatic.outputs.buildUrl }})
+
+            Changes are automatically deployed when pushed to the main branch.

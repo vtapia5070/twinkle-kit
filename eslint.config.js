@@ -20,9 +20,24 @@ const airbnbRules = {
 };
 
 export default [
-  js.configs.recommended,
+  // Global ignores configuration - must be first and standalone
   {
-    files: ['**/*.{ts,tsx}'],
+    ignores: [
+      'dist/**',
+      'node_modules/**',
+      'storybook-static/**',
+      'coverage/**',
+      'eslint.config.js',
+      'plopfile.js',
+      'vite.config.ts',
+      'vitest.config.ts',
+      'vitest.workspace.ts',
+    ],
+  },
+  // Main configuration for TypeScript/React files
+  {
+    ...js.configs.recommended,
+    files: ['lib/**/*.{ts,tsx}'],
     languageOptions: {
       globals: {
         ...globals.browser,

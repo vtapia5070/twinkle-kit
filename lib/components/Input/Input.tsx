@@ -20,9 +20,11 @@ export const Input = ({
   placeholder = '',
   error = '',
   label,
-  inputId = useId(),
+  inputId,
   required = false,
 }: InputProps) => {
+  const generatedId = useId();
+
   // Base classes that are always applied
   const baseClasses =
     'mt-1 block w-full rounded-md border shadow-sm text-text-primary text-sm p-2 ';
@@ -39,7 +41,7 @@ export const Input = ({
     <div className={twMerge(className, 'tw')}>
       {label && (
         <label
-          htmlFor={inputId}
+          htmlFor={inputId || generatedId}
           className="block text-sm font-medium text-text-primary"
         >
           {label}
@@ -47,18 +49,18 @@ export const Input = ({
         </label>
       )}
       <input
-        id={inputId}
+        id={inputId || generatedId}
         type="text"
         disabled={isDisabled}
         placeholder={placeholder}
         onChange={(e) => onChange(e.target.value)}
         className={twMerge(baseClasses, stateClasses)}
         aria-invalid={!!error}
-        aria-describedby={error ? `${inputId}-error` : undefined}
+        aria-describedby={error ? `${inputId || generatedId}-error` : undefined}
       />
       {error && (
         <p
-          id={`${inputId}-error`}
+          id={`${inputId || generatedId}-error`}
           role="alert"
           className="mt-1 text-sm text-error"
         >
