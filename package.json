@@ -1,7 +1,7 @@
 {
   "name": "twinkle-kit",
   "private": false,
-  "version": "1.0.2",
+  "version": "1.1.0",
   "type": "module",
   "module": "./dist/ui.es.js",
   "exports": {
