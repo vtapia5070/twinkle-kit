@@ -1,0 +1,85 @@
+/**
+ * Twinkle Kit CSS Variables
+ * 
+ * This file contains all CSS custom properties (variables) used across the
+ * Twinkle Kit design system. These variables are available globally when imported.
+ */
+
+:root {
+  /* Primary Colors */
+  --tw-primary: #943cdd;
+  --tw-primary-hover: #7c2d9a;
+  --tw-primary-active: #6b2d85;
+  --tw-primary-50: #fdfcfe;
+  --tw-primary-100: #f6edff;
+  --tw-primary-200: #e9d2ff;
+  --tw-primary-300: #d8a9ff;
+  --tw-primary-400: #c46fff;
+  --tw-primary-500: #943cdd;
+  --tw-primary-600: #7c2d9a;
+  --tw-primary-700: #6b2d85;
+  --tw-primary-800: #5a2a6e;
+  --tw-primary-900: #4c265d;
+  --tw-primary-950: #2f0e3f;
+
+  /* Neutral Colors */
+  --tw-neutral-50: #fafafa;
+  --tw-neutral-100: #f5f5f5;
+  --tw-neutral-200: #e5e5e5;
+  --tw-neutral-300: #d4d4d4;
+  --tw-neutral-400: #a3a3a3;
+  --tw-neutral-500: #737373;
+  --tw-neutral-600: #525252;
+  --tw-neutral-700: #404040;
+  --tw-neutral-800: #262626;
+  --tw-neutral-900: #171717;
+  --tw-neutral-950: #0a0a0a;
+
+  /* Success Colors */
+  --tw-success-50: #f0fdf4;
+  --tw-success-100: #dcfce7;
+  --tw-success-500: #22c55e;
+  --tw-success-600: #16a34a;
+  --tw-success-700: #15803d;
+
+  /* Warning Colors */
+  --tw-warning-50: #fffbeb;
+  --tw-warning-100: #fef3c7;
+  --tw-warning-500: #f59e0b;
+  --tw-warning-600: #d97706;
+  --tw-warning-700: #b45309;
+
+  /* Error Colors */
+  --tw-error-50: #fef2f2;
+  --tw-error-100: #fee2e2;
+  --tw-error-500: #ef4444;
+  --tw-error-600: #dc2626;
+  --tw-error-700: #b91c1c;
+
+  /* Semantic Variables */
+  --tw-bg: #ffffff;
+  --tw-bg-secondary: #f8fafc;
+  --tw-text: #1a1a1a;
+  --tw-text-secondary: #64748b;
+  --tw-border: #e2e8f0;
+  --tw-hover: #f1f5f9;
+  --tw-active: #e2e8f0;
+  --tw-disabled: #cbd5e1;
+  --tw-success: var(--tw-success-500);
+  --tw-warning: var(--tw-warning-500);
+  --tw-error: var(--tw-error-500);
+}
+
+/* Dark mode variables */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --tw-bg: #0f172a;
+    --tw-bg-secondary: #1e293b;
+    --tw-text: #f8fafc;
+    --tw-text-secondary: #94a3b8;
+    --tw-border: #334155;
+    --tw-hover: #1e293b;
+    --tw-active: #334155;
+    --tw-disabled: #475569;
+  }
+}
