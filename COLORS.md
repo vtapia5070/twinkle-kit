@@ -51,7 +51,10 @@ Import the CSS variables in your main CSS file:
 const { twinkleTheme } = require('twinkle-kit/tailwind');
 
 module.exports = {
-  content: ['./src/**/*.{js,ts,jsx,tsx}'],
+  content: [
+    './src/**/*.{js,ts,jsx,tsx}',
+    './node_modules/twinkle-kit/dist/**/*.js'
+  ],
   theme: {
     extend: {
       ...twinkleTheme.extend,
@@ -65,10 +68,13 @@ module.exports = {
 
 ```js
 // tailwind.config.js
-const twinklePlugin = require('twinkle-kit/tailwind');
+const { twinklePlugin } = require('twinkle-kit/tailwind');
 
 module.exports = {
-  content: ['./src/**/*.{js,ts,jsx,tsx}'],
+  content: [
+    './src/**/*.{js,ts,jsx,tsx}',
+    './node_modules/twinkle-kit/dist/**/*.js'
+  ],
   theme: {
     extend: {},
   },

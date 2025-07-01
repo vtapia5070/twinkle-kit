@@ -3,9 +3,11 @@
  * 
  * This file contains all CSS custom properties (variables) used across the
  * Twinkle Kit design system. These variables are available globally when imported.
+ * 
+ * Light theme is the default, dark theme is applied via media query.
  */
 
-:root {
+:root, .light, .light-theme {
   /* Primary Colors */
   --tw-primary: #943cdd;
   --tw-primary-hover: #7c2d9a;

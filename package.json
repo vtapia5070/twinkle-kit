@@ -15,25 +15,24 @@
       "default": "./dist/styles.css"
     },
     "./colors": {
-      "types": "./dist/colors/index.d.ts",
-      "import": "./dist/colors/index.js",
-      "default": "./dist/colors/index.js"
+      "types": "./dist/lib/styles/colors/index.d.ts",
+      "import": "./dist/lib/styles/colors/index.js",
+      "default": "./dist/lib/styles/colors/index.js"
     },
     "./variables.css": {
-      "default": "./dist/variables.css"
+      "default": "./dist/lib/styles/variables.css"
     },
-    
     "./tailwind": {
-      "types": "./dist/tailwind-plugin.d.ts",
-      "import": "./dist/tailwind-plugin.js",
-      "default": "./dist/tailwind-plugin.js"
+      "types": "./dist/lib/tailwind/plugin.d.ts",
+      "import": "./dist/lib/tailwind/plugin.js",
+      "default": "./dist/lib/tailwind/plugin.js"
     }
   },
   "files": [
     "dist",
-    "src/colors",
-    "src/variables.css",
-    "src/tailwind-plugin.ts"
+    "lib/styles/colors",
+    "lib/styles/variables.css",
+    "lib/tailwind/plugin.ts"
   ],
   "scripts": {
     "dev": "vite",
