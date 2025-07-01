@@ -22,7 +22,7 @@ View the interactive component library and documentation:
 
 ## Installation
 
-````bash
+```bash
 npm install twinkle-kit
 # or
 yarn add twinkle-kit
@@ -30,22 +30,114 @@ yarn add twinkle-kit
 pnpm add twinkle-kit
 ```
 
-## Usage
+## Getting Started
 
-```jsx
-import { Input } from 'twinkle-kit';
-import 'twinkle-kit/styles.css';
+### Using Components
+
+Import components from `twinkle-kit/core`:
+
+```tsx
+import { Button, Card, Alert } from 'twinkle-kit/core';
 
 function App() {
   return (
-    <Input
-      label="Email"
-      placeholder="Enter your email"
-      onChange={(value) => console.log(value)}
-    />
+    <div>
+      <Card>
+        <Alert>Welcome to Twinkle Kit!</Alert>
+        <Button>Click me</Button>
+      </Card>
+    </div>
   );
 }
 ```
+
+### Using Design Tokens
+
+Import CSS tokens to get access to all design system variables:
+
+```tsx
+// Import tokens for CSS custom properties
+import 'twinkle-kit/core/tokens';
+
+// Now you can use CSS variables in your components
+function CustomComponent() {
+  return (
+    <div
+      style={{
+        backgroundColor: 'var(--color-surface)',
+        color: 'var(--color-text-primary)',
+        border: '1px solid var(--color-border)',
+      }}
+    >
+      Custom styled component
+    </div>
+  );
+}
+```
+
+Or import the CSS file directly:
+
+```css
+/* In your CSS file */
+@import 'twinkle-kit/tokens.css';
+
+.my-component {
+  background-color: var(--color-primary);
+  color: var(--color-primary-contrast);
+}
+```
+
+### Available Tokens
+
+The design system includes the following CSS custom properties:
+
+#### Colors
+
+- `--color-primary-*` - Primary brand colors (1, 3, 8, 9, 10, 11)
+- `--color-neutral-*` - Neutral colors (1, 2, 3, 8, 9, 10, 11)
+- `--color-background` - Main background color
+- `--color-surface` - Surface/card background
+- `--color-border` - Border color
+- `--color-text-primary` - Primary text color
+- `--color-text-secondary` - Secondary text color
+- `--color-error` - Error state color
+- `--color-success` - Success state color
+- `--color-warning` - Warning state color
+
+## Components
+
+### Available Components
+
+- `Alert` - Display important messages
+- `Button` - Interactive button component
+- `Card` - Container component
+- `CardHeader` - Card header component
+- `CardDescription` - Card description component
+- `Input` - Form input component
+
+## Development
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Run tests
+npm test
+
+# Build library
+npm run build
+```
+
+## Contributing
+
+We welcome contributions! Please read our contributing guidelines before submitting pull requests.
+
+## License
+
+MIT
 
 ## Styling
 
@@ -206,4 +298,3 @@ This project uses [Chromatic](https://www.chromatic.com/) for visual testing and
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-````

@@ -3,16 +3,30 @@
   "private": false,
   "version": "1.1.0",
   "type": "module",
-  "module": "./dist/ui.es.js",
+  "module": "./dist/index.es.js",
   "exports": {
     ".": {
-      "import": "./dist/ui.es.js",
+      "import": "./dist/index.es.js",
       "types": "./dist/index.d.ts",
-      "default": "./dist/ui.umd.js"
+      "default": "./dist/index.umd.js"
+    },
+    "./core": {
+      "import": "./dist/core.es.js",
+      "types": "./dist/core.d.ts",
+      "default": "./dist/core.umd.js"
+    },
+    "./core/tokens": {
+      "import": "./dist/tokens.es.js",
+      "types": "./dist/tokens.d.ts",
+      "default": "./dist/tokens.umd.js"
     },
     "./styles.css": {
       "require": "./dist/styles.css",
       "default": "./dist/styles.css"
+    },
+    "./tokens.css": {
+      "require": "./dist/tokens.css",
+      "default": "./dist/tokens.css"
     }
   },
   "files": [
@@ -20,8 +34,9 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build && npm run build:css",
+    "build": "tsc -b && vite build && npm run build:css && npm run build:tokens",
     "build:css": "npx @tailwindcss/cli  -m -i ./lib/styles/styles.css -o ./dist/styles.css --minify",
+    "build:tokens": "cp ./lib/core/tokens/tokens.css ./dist/tokens.css",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "preview": "vite preview",
