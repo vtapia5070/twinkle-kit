@@ -51,28 +51,24 @@ function App() {
 }
 ```
 
-### Using Design Tokens
-
-Import CSS tokens to get access to all design system variables:
+**Note:** This will only import the components. To include the styles import the CSS tokens in a root component file. There are other ways you can use the styles and tokens, see below.
 
 ```tsx
-// Import tokens for CSS custom properties
-import 'twinkle-kit/core/tokens';
+import 'twinkle-kit/tokens.css';
+```
 
-// Now you can use CSS variables in your components
-function CustomComponent() {
-  return (
-    <div
-      style={{
-        backgroundColor: 'var(--color-surface)',
-        color: 'var(--color-text-primary)',
-        border: '1px solid var(--color-border)',
-      }}
-    >
-      Custom styled component
-    </div>
-  );
-}
+### Using Design Tokens
+
+**Recommended:** Import the complete CSS (includes design tokens + component styles):
+
+```tsx
+import 'twinkle-kit/tokens.css';
+```
+
+**Alternative:** If you need design tokens in your build process, you can also import the full styles:
+
+```tsx
+import 'twinkle-kit/styles.css';
 ```
 
 Or import the CSS file directly:
@@ -87,22 +83,44 @@ Or import the CSS file directly:
 }
 ```
 
+#### Semantic Color Classes
+
+The design system provides convenient utility classes for semantic colors:
+
+```tsx
+// Use semantic color classes directly
+function MyComponent() {
+  return (
+    <div className="bg-surface border border-border">
+      <h1 className="text-primary">Primary heading</h1>
+      <p className="text-secondary">Secondary text</p>
+      <button className="bg-primary text-primary-contrast">
+        Primary button
+      </button>
+      <div className="bg-error text-primary-contrast">Error message</div>
+    </div>
+  );
+}
+```
+
+**Available utility classes:**
+
+- **Background**: `bg-background`, `bg-surface`, `bg-surface-hover`, `bg-primary`, `bg-primary-hover`, `bg-primary-active`, `bg-primary-disabled`, `bg-error`, `bg-success`, `bg-warning`
+- **Text**: `text-primary`, `text-secondary`, `text-disabled`, `text-primary-contrast`, `text-error`, `text-success`, `text-warning`
+- **Border**: `border-border`, `border-primary`, `border-error`, `border-success`, `border-warning`
+
 ### Available Tokens
 
 The design system includes the following CSS custom properties:
 
-#### Colors
+```tsx
+import { tokens } from 'twinkle-kit/core/tokens';
 
-- `--color-primary-*` - Primary brand colors (1, 3, 8, 9, 10, 11)
-- `--color-neutral-*` - Neutral colors (1, 2, 3, 8, 9, 10, 11)
-- `--color-background` - Main background color
-- `--color-surface` - Surface/card background
-- `--color-border` - Border color
-- `--color-text-primary` - Primary text color
-- `--color-text-secondary` - Secondary text color
-- `--color-error` - Error state color
-- `--color-success` - Success state color
-- `--color-warning` - Warning state color
+// Use tokens in your custom components
+const MyComponent = () => (
+  <div style={{ color: tokens.colors.primary }}>Custom styled component</div>
+);
+```
 
 ## Components
 

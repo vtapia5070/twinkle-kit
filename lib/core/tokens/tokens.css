@@ -1,3 +1,8 @@
+/* Twinkle Kit Design Tokens */
+/* Import this file to get access to all design system CSS custom properties */
+
+@import 'tailwindcss';
+
 :root,
 .light,
 .light-theme {
@@ -85,4 +90,115 @@
     --color-success: #22c55e;
     --color-warning: #f97316;
   }
+}
+
+/* Tailwind theme configuration */
+@theme {
+  --color-primary-1: var(--color-primary-1);
+  --color-primary-3: var(--color-primary-3);
+  --color-primary-8: var(--color-primary-8);
+  --color-primary-9: var(--color-primary-9);
+  --color-primary-10: var(--color-primary-10);
+  --color-primary-11: var(--color-primary-11);
+
+  --color-neutral-1: var(--color-neutral-1);
+  --color-neutral-2: var(--color-neutral-2);
+  --color-neutral-3: var(--color-neutral-3);
+  --color-neutral-8: var(--color-neutral-8);
+  --color-neutral-9: var(--color-neutral-9);
+  --color-neutral-10: var(--color-neutral-10);
+  --color-neutral-11: var(--color-neutral-11);
+
+  --color-background: var(--color-background);
+  --color-surface: var(--color-surface);
+  --color-surface-hover: var(--color-surface-hover);
+  --color-border: var(--color-border);
+  --color-text-primary: var(--color-text-primary);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-text-disabled: var(--color-text-disabled);
+  --color-primary: var(--color-primary);
+  --color-primary-hover: var(--color-primary-hover);
+  --color-primary-active: var(--color-primary-active);
+  --color-primary-disabled: var(--color-primary-disabled);
+  --color-primary-contrast: var(--color-primary-contrast);
+
+  --color-alert-info-bg: var(--color-alert-info-bg);
+  --color-alert-info-text: var(--color-alert-info-text);
+
+  --color-error: var(--color-error);
+  --color-success: var(--color-success);
+  --color-warning: var(--color-warning);
+}
+
+/* Semantic Color Utility Classes */
+/* Background Colors */
+.bg-background {
+  background-color: var(--color-background);
+}
+.bg-surface {
+  background-color: var(--color-surface);
+}
+.bg-surface-hover {
+  background-color: var(--color-surface-hover);
+}
+.bg-primary {
+  background-color: var(--color-primary);
+}
+.bg-primary-hover {
+  background-color: var(--color-primary-hover);
+}
+.bg-primary-active {
+  background-color: var(--color-primary-active);
+}
+.bg-primary-disabled {
+  background-color: var(--color-primary-disabled);
+}
+.bg-error {
+  background-color: var(--color-error);
+}
+.bg-success {
+  background-color: var(--color-success);
+}
+.bg-warning {
+  background-color: var(--color-warning);
+}
+
+/* Text Colors */
+.text-primary {
+  color: var(--color-text-primary);
+}
+.text-secondary {
+  color: var(--color-text-secondary);
+}
+.text-disabled {
+  color: var(--color-text-disabled);
+}
+.text-primary-contrast {
+  color: var(--color-primary-contrast);
+}
+.text-error {
+  color: var(--color-error);
+}
+.text-success {
+  color: var(--color-success);
+}
+.text-warning {
+  color: var(--color-warning);
+}
+
+/* Border Colors */
+.border-border {
+  border-color: var(--color-border);
+}
+.border-primary {
+  border-color: var(--color-primary);
+}
+.border-error {
+  border-color: var(--color-error);
+}
+.border-success {
+  border-color: var(--color-success);
+}
+.border-warning {
+  border-color: var(--color-warning);
 }
