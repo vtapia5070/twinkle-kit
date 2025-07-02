@@ -31,11 +31,17 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run Tests
-        run: npm test
+      - name: Run Unit Tests
+        run: npx vitest run --exclude="**/bundle.test.ts" --exclude="**/distribution.test.ts"
 
       - name: Run Type Check
         run: npx tsc --noEmit
 
       - name: Run Linting
         run: npm run lint
+
+      - name: Build and Test Bundle
+        run: npm run test:bundle
+
+      - name: Build and Test Distribution
+        run: npm run test:distribution
