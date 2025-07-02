@@ -84,4 +84,49 @@ describe('Input', () => {
     const input = screen.getByRole('textbox');
     expect(input).toHaveAttribute('aria-invalid', 'false');
   });
+
+  describe('Accessibility', () => {
+    it('should have proper label association', () => {
+      const { getByLabelText } = render(
+        <Input label="Email" onChange={() => {}} />
+      );
+
+      const input = getByLabelText('Email');
+      expect(input).toBeInTheDocument();
+    });
+
+    it('should indicate required fields', () => {
+      const { getByRole, getByText } = render(
+        <Input label="Email" onChange={() => {}} required />
+      );
+
+      // Input should be accessible by role
+      const input = getByRole('textbox');
+      expect(input).toBeInTheDocument();
+
+      // Required indicator should be visible
+      expect(getByText('*')).toBeInTheDocument();
+    });
+
+    it('should have proper error state accessibility', () => {
+      const { getByLabelText, getByRole } = render(
+        <Input label="Email" onChange={() => {}} error="Invalid email format" />
+      );
+
+      const input = getByLabelText('Email');
+      expect(input).toHaveAttribute('aria-invalid', 'true');
+
+      const errorMessage = getByRole('alert');
+      expect(errorMessage).toHaveTextContent('Invalid email format');
+    });
+
+    it('should handle disabled state properly', () => {
+      const { getByLabelText } = render(
+        <Input label="Email" onChange={() => {}} isDisabled />
+      );
+
+      const input = getByLabelText('Email');
+      expect(input).toBeDisabled();
+    });
+  });
 });
