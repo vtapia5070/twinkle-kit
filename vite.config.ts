@@ -16,7 +16,7 @@ export default defineConfig({
       },
       name: 'twinkle-kit',
       fileName: (format, entryName) => `${entryName}.${format}.js`,
-      formats: ['es', 'cjs', 'umd'],
+      formats: ['es', 'cjs'],
     },
     rollupOptions: {
       external: Object.keys(peerDependencies),
