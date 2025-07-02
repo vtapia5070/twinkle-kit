@@ -64,8 +64,8 @@ describe('Distribution Tests', () => {
   });
 
   describe('CSS Files', () => {
-    it('should generate styles.css', () => {
-      const stylesPath = path.join(process.cwd(), 'dist', 'styles.css');
+    it('should generate colors.css', () => {
+      const stylesPath = path.join(process.cwd(), 'dist', 'colors.css');
       expect(fs.existsSync(stylesPath)).toBe(true);
 
       const content = fs.readFileSync(stylesPath, 'utf8');
@@ -111,7 +111,7 @@ describe('Distribution Tests', () => {
       expect(pkg.exports['.']).toBeDefined();
       expect(pkg.exports['./core']).toBeDefined();
       expect(pkg.exports['./core/tokens']).toBeDefined();
-      expect(pkg.exports['./styles.css']).toBeDefined();
+      expect(pkg.exports['./colors.css']).toBeDefined();
       expect(pkg.exports['./tokens.css']).toBeDefined();
     });
   });

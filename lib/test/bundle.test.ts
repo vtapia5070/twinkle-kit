@@ -79,7 +79,7 @@ describe('Bundle Analysis', () => {
         'index.d.ts',
         'core.d.ts',
         'tokens.d.ts',
-        'styles.css',
+        'colors.css',
         'tokens.css',
       ];
 
