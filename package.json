@@ -20,9 +20,9 @@
       "types": "./dist/tokens.d.ts",
       "default": "./dist/tokens.umd.js"
     },
-    "./styles.css": {
-      "require": "./dist/styles.css",
-      "default": "./dist/styles.css"
+    "./colors.css": {
+      "require": "./dist/colors.css",
+      "default": "./dist/colors.css"
     },
     "./tokens.css": {
       "require": "./dist/tokens.css",
@@ -34,8 +34,8 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build && npm run build:css && npm run build:tokens",
-    "build:css": "npx @tailwindcss/cli  -m -i ./lib/styles/styles.css -o ./dist/styles.css --minify",
+    "build": "tsc -b && vite build && npm run build:colors && npm run build:tokens",
+    "build:colors": "cp ./lib/core/tokens/colors.css ./dist/colors.css",
     "build:tokens": "npx @tailwindcss/cli -i ./lib/core/tokens/tokens.css -o ./dist/tokens.css --minify",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",

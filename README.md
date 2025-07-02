@@ -94,6 +94,7 @@ function MyComponent() {
     <div className="bg-surface border border-border">
       <h1 className="text-primary">Primary heading</h1>
       <p className="text-secondary">Secondary text</p>
+      <span className="text-accent">Accent/brand text</span>
       <button className="bg-primary text-primary-contrast">
         Primary button
       </button>
@@ -106,7 +107,7 @@ function MyComponent() {
 **Available utility classes:**
 
 - **Background**: `bg-background`, `bg-surface`, `bg-surface-hover`, `bg-primary`, `bg-primary-hover`, `bg-primary-active`, `bg-primary-disabled`, `bg-error`, `bg-success`, `bg-warning`
-- **Text**: `text-primary`, `text-secondary`, `text-disabled`, `text-primary-contrast`, `text-error`, `text-success`, `text-warning`
+- **Text**: `text-primary` (readable text), `text-secondary`, `text-disabled`, `text-accent` (brand color), `text-primary-contrast`, `text-error`, `text-success`, `text-warning`
 - **Border**: `border-border`, `border-primary`, `border-error`, `border-success`, `border-warning`
 
 ### Available Tokens

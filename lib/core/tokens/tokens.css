@@ -2,95 +2,7 @@
 /* Import this file to get access to all design system CSS custom properties */
 
 @import 'tailwindcss';
-
-:root,
-.light,
-.light-theme {
-  /* Primary Colors */
-  --color-primary-1: #fdfcfe; /* lightest purple for backgrounds */
-  --color-primary-3: #f6edff; /* light purple for alert backgrounds */
-  --color-primary-8: #b794f6; /* focus states */
-  --color-primary-9: #943cdd; /* main accent/button color */
-  --color-primary-10: #7c2d9a; /* button hover */
-  --color-primary-11: #8632ca; /* accent text */
-
-  /* Neutral Colors */
-  --color-neutral-1: #ffffff; /* light background */
-  --color-neutral-2: #f9f9fb; /* card background */
-  --color-neutral-3: #f5f5f5; /* disabled states */
-  --color-neutral-8: #8b8d98; /* gray color */
-  --color-neutral-9: #6c6e79; /* button disabled background */
-  --color-neutral-11: #1a1a1a; /* dark text */
-
-  /* Semantic Colors */
-  --color-background: var(--color-neutral-1);
-  --color-surface: var(--color-neutral-2);
-  --color-surface-hover: var(--color-neutral-3);
-  --color-border: var(--color-neutral-3);
-  --color-text-primary: var(--color-neutral-11);
-  --color-text-secondary: var(--color-neutral-8);
-  --color-text-disabled: var(--color-neutral-8);
-  --color-primary: var(--color-primary-9);
-  --color-primary-hover: var(--color-primary-10);
-  --color-primary-active: var(--color-primary-9);
-  --color-primary-disabled: var(--color-neutral-9);
-  --color-primary-contrast: #ffffff;
-
-  /* Alert Colors */
-  --color-alert-info-bg: var(--color-primary-3);
-  --color-alert-info-text: var(--color-primary-11);
-
-  /* State Colors */
-  --color-error: #ef4444;
-  --color-success: #22c55e;
-  --color-warning: #f97316;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root,
-  .dark,
-  .dark-theme {
-    /* Primary Colors */
-    --color-primary-1: #1a0d21; /* darkest purple for backgrounds */
-    --color-primary-3: #2e1943; /* dark purple for alert backgrounds (same in dark) */
-    --color-primary-8: #8b5fbf; /* focus states */
-    --color-primary-9: #943cdd; /* main accent/button color */
-    --color-primary-10: #a855f7; /* button hover (lighter) */
-    --color-primary-11: #d19cff; /* accent text */
-
-    /* Neutral Colors */
-    --color-neutral-1: #111111; /* dark background */
-    --color-neutral-2: #19191b; /* card background */
-    --color-neutral-3: #222325; /* disabled states */
-    --color-neutral-8: #8b8d98; /* gray color */
-    --color-neutral-9: #6c6e79; /* button disabled background */
-    --color-neutral-10: #797b86; /* button disabled background */
-    --color-neutral-11: #f5f5f5; /* light text */
-
-    /* Semantic Colors */
-    --color-background: var(--color-neutral-1);
-    --color-surface: var(--color-neutral-2);
-    --color-surface-hover: var(--color-neutral-3);
-    --color-border: var(--color-neutral-3);
-    --color-text-primary: var(--color-neutral-11);
-    --color-text-secondary: var(--color-neutral-8);
-    --color-text-disabled: var(--color-neutral-8);
-    --color-primary: var(--color-primary-9);
-    --color-primary-hover: var(--color-primary-10);
-    --color-primary-active: var(--color-primary-9);
-    --color-primary-disabled: var(--color-neutral-10);
-    --color-primary-contrast: #ffffff;
-
-    /* Alert Colors */
-    --color-alert-info-bg: var(--color-primary-3);
-    --color-alert-info-text: var(--color-primary-11);
-
-    /* State Colors */
-    --color-error: #ef4444;
-    --color-success: #22c55e;
-    --color-warning: #f97316;
-  }
-}
+@import './colors.css';
 
 /* Tailwind theme configuration */
 @theme {
@@ -172,6 +84,9 @@
 }
 .text-disabled {
   color: var(--color-text-disabled);
+}
+.text-accent {
+  color: var(--color-primary);
 }
 .text-primary-contrast {
   color: var(--color-primary-contrast);
