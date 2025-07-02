@@ -277,11 +277,44 @@ The project uses strict TypeScript settings with:
 
 ## Testing
 
-The project uses Vitest for testing with:
+Twinkle Kit uses a comprehensive testing strategy to ensure component reliability, accessibility, and performance:
 
-- React Testing Library for component testing
-- Jest DOM for DOM testing utilities
-- User Event for simulating user interactions
+### Quick Testing Commands
+
+```bash
+# Run all tests
+npm test
+
+# Run tests with coverage
+npm run test:coverage
+
+# Run tests in watch mode
+npm run test:watch
+
+# Run full test suite (before publishing)
+npm run test:all
+```
+
+### Testing Layers
+
+- **Unit Tests** - Individual component functionality and props, and accessibility
+- **Integration Tests** - Component composition and cross-component interactions
+- **Distribution Tests** - Built library exports and TypeScript definitions
+- **Bundle Analysis** - Tree-shaking support and bundle optimization
+- **Visual Regression** - Cross-browser appearance via Storybook + Chromatic
+
+### Comprehensive Testing Guide
+
+For detailed information about our testing strategy, tools, best practices, and how to write tests, see our complete **[Testing Guide](lib/test/README.md)**.
+
+The testing guide covers:
+
+- Testing philosophy and approach
+- How to write good component tests
+- Accessibility testing guidelines
+- Integration testing patterns
+- CI/CD testing pipeline
+- Debugging and coverage analysis
 
 ### Visual Testing
 
