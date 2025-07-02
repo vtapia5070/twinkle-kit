@@ -35,4 +35,40 @@ describe('<Button />', () => {
     await user.click(button);
     expect(handleClick).not.toHaveBeenCalled();
   });
+
+  describe('Accessibility', () => {
+    it('should have proper button semantics', () => {
+      const { getByRole } = render(
+        <Button onClick={() => {}}>Click me</Button>
+      );
+
+      const button = getByRole('button');
+      expect(button).toBeInTheDocument();
+      // Button element should be focusable and clickable
+      expect(button.tagName).toBe('BUTTON');
+    });
+
+    it('should be properly disabled', () => {
+      const { getByRole } = render(
+        <Button onClick={() => {}} disabled>
+          Disabled button
+        </Button>
+      );
+
+      const button = getByRole('button');
+      expect(button).toBeDisabled();
+    });
+
+    it('should indicate loading state', () => {
+      const { getByRole } = render(
+        <Button onClick={() => {}} isLoading>
+          Loading button
+        </Button>
+      );
+
+      const button = getByRole('button');
+      expect(button).toBeDisabled();
+      expect(button).toHaveTextContent('Loading...');
+    });
+  });
 });

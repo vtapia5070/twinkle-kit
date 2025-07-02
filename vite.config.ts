@@ -9,10 +9,14 @@ export default defineConfig({
   plugins: [react(), dts({ rollupTypes: true }), tailwindcss()],
   build: {
     lib: {
-      entry: resolve(__dirname, './lib/main.ts'),
+      entry: {
+        index: resolve(__dirname, './lib/main.ts'),
+        core: resolve(__dirname, './lib/core/index.ts'),
+        tokens: resolve(__dirname, './lib/core/tokens/index.ts'),
+      },
       name: 'twinkle-kit',
-      fileName: (format) => `ui.${format}.js`,
-      formats: ['es', 'cjs', 'umd'],
+      fileName: (format, entryName) => `${entryName}.${format}.js`,
+      formats: ['es', 'cjs'],
     },
     rollupOptions: {
       external: Object.keys(peerDependencies),

@@ -1,18 +1,32 @@
 {
   "name": "twinkle-kit",
   "private": false,
-  "version": "1.1.0",
+  "version": "2.0.0",
   "type": "module",
-  "module": "./dist/ui.es.js",
+  "module": "./dist/index.es.js",
   "exports": {
     ".": {
-      "import": "./dist/ui.es.js",
+      "import": "./dist/index.es.js",
       "types": "./dist/index.d.ts",
-      "default": "./dist/ui.umd.js"
+      "default": "./dist/index.umd.js"
     },
-    "./styles.css": {
-      "require": "./dist/styles.css",
-      "default": "./dist/styles.css"
+    "./core": {
+      "import": "./dist/core.es.js",
+      "types": "./dist/core.d.ts",
+      "default": "./dist/core.umd.js"
+    },
+    "./core/tokens": {
+      "import": "./dist/tokens.es.js",
+      "types": "./dist/tokens.d.ts",
+      "default": "./dist/tokens.umd.js"
+    },
+    "./colors.css": {
+      "require": "./dist/colors.css",
+      "default": "./dist/colors.css"
+    },
+    "./tokens.css": {
+      "require": "./dist/tokens.css",
+      "default": "./dist/tokens.css"
     }
   },
   "files": [
@@ -20,17 +34,25 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build && npm run build:css",
-    "build:css": "npx @tailwindcss/cli  -m -i ./lib/styles/styles.css -o ./dist/styles.css --minify",
+    "build": "tsc -b && vite build && npm run build:colors && npm run build:tokens",
+    "build:colors": "cp ./lib/core/tokens/colors.css ./dist/colors.css",
+    "build:tokens": "npx @tailwindcss/cli -i ./lib/core/tokens/tokens.css -o ./dist/tokens.css --minify",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "preview": "vite preview",
     "prepare": "husky",
     "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest run --coverage",
+    "test:distribution": "npm run build && vitest run lib/test/distribution.test.ts",
+    "test:bundle": "npm run build && vitest run lib/test/bundle.test.ts",
+    "test:integration": "vitest run lib/test/integration.test.tsx",
+    "test:watch": "vitest --watch",
+    "test:all": "npm run test:coverage && npm run test:distribution && npm run test:bundle",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "generate": "plop",
-    "prepublishOnly": "npm run build",
+    "prepublishOnly": "npm run test:all && npm run build",
     "chromatic": "npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN"
   },
   "dependencies": {

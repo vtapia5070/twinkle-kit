@@ -1,0 +1,211 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="System/Design Tokens" />
+
+# Design Tokens
+
+Comprehensive guide to using Twinkle Kit's design tokens, including utility classes and CSS custom properties.
+
+## Semantic Utility Classes
+
+When you import `twinkle-kit/tokens.css`, you get access to semantic utility classes that make it easy to apply design system colors consistently.
+
+### Background Colors
+
+```tsx
+<div className="bg-background">Page background</div>
+<div className="bg-surface">Card/surface background</div>
+<div className="bg-surface-hover">Hover state background</div>
+<div className="bg-primary">Primary brand background</div>
+<div className="bg-primary-hover">Primary hover state</div>
+<div className="bg-primary-active">Primary active state</div>
+<div className="bg-primary-disabled">Primary disabled state</div>
+<div className="bg-error">Error background</div>
+<div className="bg-success">Success background</div>
+<div className="bg-warning">Warning background</div>
+```
+
+### Text Colors
+
+```tsx
+<p className="text-primary">Primary readable text</p>
+<p className="text-secondary">Secondary text</p>
+<p className="text-disabled">Disabled text</p>
+<p className="text-accent">Brand accent text</p>
+<p className="text-primary-contrast">High contrast text</p>
+<p className="text-error">Error text</p>
+<p className="text-success">Success text</p>
+<p className="text-warning">Warning text</p>
+```
+
+### Border Colors
+
+```tsx
+<div className="border border-border">Default border</div>
+<div className="border border-primary">Primary border</div>
+<div className="border border-error">Error border</div>
+<div className="border border-success">Success border</div>
+<div className="border border-warning">Warning border</div>
+```
+
+## Text vs Accent Colors
+
+### Key Distinction
+
+- **`text-primary`** = Readable text color (optimized for accessibility)
+- **`text-accent`** = Brand primary color (for highlights and emphasis)
+
+```tsx
+function Example() {
+  return (
+    <div>
+      <h1 className="text-primary">This is regular readable text</h1>
+      <p className="text-secondary">
+        This is secondary text with lower contrast
+      </p>
+      <span className="text-accent">
+        This is brand accent text for highlights!
+      </span>
+    </div>
+  );
+}
+```
+
+## Component State Examples
+
+### Button States
+
+```tsx
+// Normal state
+<button className="bg-primary text-primary-contrast">
+  Primary Button
+</button>
+
+// Hover state (you can simulate with hover: classes)
+<button className="bg-primary-hover text-primary-contrast">
+  Hovered Button
+</button>
+
+// Disabled state
+<button className="bg-primary-disabled text-primary-contrast cursor-not-allowed">
+  Disabled Button
+</button>
+```
+
+### Alert Variants
+
+```tsx
+// Info alert
+<div className="bg-primary-3 text-primary-11 p-4 rounded">
+  Information message
+</div>
+
+// Error alert
+<div className="bg-error text-primary-contrast p-4 rounded">
+  Error message
+</div>
+
+// Success alert
+<div className="bg-success text-primary-contrast p-4 rounded">
+  Success message
+</div>
+```
+
+### Form States
+
+```tsx
+// Normal input
+<input className="border border-border bg-surface text-primary" />
+
+// Focus state
+<input className="border border-primary bg-surface text-primary" />
+
+// Error state
+<input className="border border-error bg-surface text-primary" />
+
+// Disabled state
+<input className="border border-border bg-surface-hover text-disabled" disabled />
+```
+
+## CSS Custom Properties
+
+For custom styling beyond utility classes:
+
+```css
+.custom-component {
+  /* Use semantic colors */
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+
+  /* Use brand accent */
+  accent-color: var(--color-primary);
+}
+
+.custom-component:hover {
+  background-color: var(--color-surface-hover);
+}
+
+.custom-component:focus {
+  border-color: var(--color-primary);
+  outline-color: var(--color-primary);
+}
+```
+
+## Theme Variables by Mode
+
+### Light Theme Values
+
+```css
+--color-background: #ffffff;
+--color-surface: #f9f9fb;
+--color-text-primary: #1a1a1a;
+--color-text-secondary: #8b8d98;
+--color-primary: #943cdd;
+--color-border: #f5f5f5;
+```
+
+### Dark Theme Values
+
+```css
+--color-background: #111111;
+--color-surface: #19191b;
+--color-text-primary: #f5f5f5;
+--color-text-secondary: #8b8d98;
+--color-primary: #943cdd;
+--color-border: #222325;
+```
+
+## Advanced Usage
+
+### Combining with Tailwind
+
+Since tokens.css includes Tailwind, you can combine semantic classes with Tailwind utilities:
+
+```tsx
+<div className="bg-surface p-6 rounded-lg shadow-sm border border-border">
+  <h2 className="text-primary text-xl font-bold mb-4">Card Title</h2>
+  <p className="text-secondary text-sm">Card description text</p>
+  <button className="bg-primary text-primary-contrast px-4 py-2 rounded mt-4 hover:bg-primary-hover transition-colors">
+    Action Button
+  </button>
+</div>
+```
+
+### Custom Theme Implementation
+
+```tsx
+// Force light theme
+<div className="light-theme">
+  <div className="bg-background text-primary">
+    Always light theme content
+  </div>
+</div>
+
+// Force dark theme
+<div className="dark-theme">
+  <div className="bg-background text-primary">
+    Always dark theme content
+  </div>
+</div>
+```
