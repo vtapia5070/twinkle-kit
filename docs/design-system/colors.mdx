@@ -4,7 +4,9 @@ import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs/blocks';
 
 # Color System
 
-Our design system is built on a comprehensive color palette that supports both light and dark themes seamlessly.
+Our design system uses a comprehensive color palette that supports both light and dark themes seamlessly. All colors are available as CSS custom properties and follow semantic naming conventions.
+
+## Color Palette
 
 <ColorPalette>
   <ColorItem
@@ -21,20 +23,19 @@ Our design system is built on a comprehensive color palette that supports both l
   />
   <ColorItem
     title="Neutral Colors"
-    subtitle="Gray scale"
+    subtitle="Gray scale for UI elements"
     colors={{
       'neutral-1': '#ffffff',
       'neutral-2': '#f9f9fb',
       'neutral-3': '#f5f5f5',
       'neutral-8': '#8b8d98',
       'neutral-9': '#6c6e79',
-      'neutral-10': '#797b86',
       'neutral-11': '#1a1a1a',
     }}
   />
   <ColorItem
     title="Semantic Colors"
-    subtitle="Component-specific colors"
+    subtitle="Layout and text colors"
     colors={{
       background: 'var(--color-background)',
       surface: 'var(--color-surface)',
@@ -75,29 +76,74 @@ Our design system is built on a comprehensive color palette that supports both l
   />
 </ColorPalette>
 
-## Usage
+## Color Meanings
 
-### Light Theme
+### Primary Colors
 
-- **Background**: `#ffffff` (neutral-1)
-- **Surface/Cards**: `#f9f9fb` (neutral-2)
-- **Primary/Buttons**: `#943cdd` (primary-9)
-- **Text**: `#1a1a1a` (neutral-11)
+- **primary-1**: Lightest purple for subtle backgrounds
+- **primary-3**: Light purple for alert backgrounds
+- **primary-8**: Focus states and interactive elements
+- **primary-9**: Main brand/accent color
+- **primary-10**: Hover states
+- **primary-11**: Accent text color
 
-### Dark Theme
+### Neutral Colors
 
-- **Background**: `#111111` (neutral-1)
-- **Surface/Cards**: `#19191b` (neutral-2)
-- **Primary/Buttons**: `#943cdd` (primary-9)
-- **Text**: `#f5f5f5` (neutral-11)
+- **neutral-1**: Page background
+- **neutral-2**: Card/surface background
+- **neutral-3**: Disabled states, subtle borders
+- **neutral-8**: Secondary text, icons
+- **neutral-9**: Disabled button backgrounds
+- **neutral-11**: Primary text color
 
-### Button States
+### Semantic Mappings
 
-- **Normal**: `bg-primary-9` with `text-primary-contrast`
-- **Hover**: `bg-primary-10`
-- **Disabled**: `bg-primary-disabled` (#797b86)
+#### Light Theme
 
-### Alert Types
+- **Background**: `neutral-1` (`#ffffff`)
+- **Surface**: `neutral-2` (`#f9f9fb`)
+- **Text**: `neutral-11` (`#1a1a1a`)
+- **Secondary Text**: `neutral-8` (`#8b8d98`)
+- **Primary/Accent**: `primary-9` (`#943cdd`)
 
-- **Info**: `bg-primary-3` (#f6edff) with `text-primary-11` (#8632ca)
-- **Error/Success/Warning**: Colored background with white text
+#### Dark Theme
+
+- **Background**: `neutral-1` (`#111111`)
+- **Surface**: `neutral-2` (`#19191b`)
+- **Text**: `neutral-11` (`#f5f5f5`)
+- **Secondary Text**: `neutral-8` (`#8b8d98`)
+- **Primary/Accent**: `primary-9` (`#943cdd`)
+
+## CSS Variables
+
+All colors are available as CSS custom properties:
+
+```css
+/* Primary colors */
+--color-primary-1, --color-primary-3, --color-primary-8
+--color-primary-9, --color-primary-10, --color-primary-11
+
+/* Neutral colors */
+--color-neutral-1, --color-neutral-2, --color-neutral-3
+--color-neutral-8, --color-neutral-9, --color-neutral-11
+
+/* Semantic colors */
+--color-background, --color-surface, --color-surface-hover
+--color-border, --color-text-primary, --color-text-secondary
+--color-text-disabled, --color-primary, --color-primary-hover
+--color-primary-active, --color-primary-disabled
+--color-primary-contrast
+
+/* Alert colors */
+--color-alert-info-bg, --color-alert-info-text
+
+/* State colors */
+--color-error, --color-success, --color-warning
+```
+
+## Important Distinction
+
+- **`--color-text-primary`** = Readable text color (optimized for accessibility)
+- **`--color-primary`** = Brand primary color (for accents and highlights)
+
+This ensures proper contrast while providing brand expression options.

@@ -1,0 +1,144 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Getting Started/Installation" />
+
+# Getting Started
+
+Learn how to install and use Twinkle Kit in your React application.
+
+## Installation
+
+```bash
+npm install twinkle-kit
+```
+
+## Import Options
+
+### Complete Design System (Recommended)
+
+Import components and styles together:
+
+```tsx
+// Import components
+import { Button, Card, Alert, Input } from 'twinkle-kit/core';
+
+// Import complete CSS (variables + utilities + component styles)
+import 'twinkle-kit/tokens.css';
+
+function App() {
+  return (
+    <div className="bg-background">
+      <Card className="bg-surface border border-border">
+        <h1 className="text-primary">Welcome!</h1>
+        <p className="text-secondary">This uses design system colors</p>
+        <Button className="bg-primary text-primary-contrast">
+          Primary Action
+        </Button>
+      </Card>
+    </div>
+  );
+}
+```
+
+### Colors Only
+
+If you only need color variables:
+
+```tsx
+// Import just color CSS custom properties
+import 'twinkle-kit/colors.css';
+
+function MyComponent() {
+  return (
+    <div
+      style={{
+        backgroundColor: 'var(--color-surface)',
+        color: 'var(--color-text-primary)',
+      }}
+    >
+      Content with design system colors
+    </div>
+  );
+}
+```
+
+## What's Included
+
+### `tokens.css` (14.6KB)
+
+- ✅ CSS custom properties (color variables)
+- ✅ Tailwind CSS utilities
+- ✅ Semantic utility classes
+- ✅ All component styles
+
+### `colors.css` (3.4KB)
+
+- ✅ CSS custom properties (color variables only)
+- ❌ No utility classes
+- ❌ No component styles
+
+## Basic Usage
+
+### Using Components
+
+```tsx
+import { Button, Alert, Card, Input } from 'twinkle-kit/core';
+
+function MyApp() {
+  return (
+    <>
+      <Button variant="primary">Primary Button</Button>
+      <Alert variant="info">Information message</Alert>
+      <Card>Card content</Card>
+      <Input placeholder="Enter text..." />
+    </>
+  );
+}
+```
+
+### Using Semantic Colors
+
+```tsx
+// Semantic utility classes (recommended)
+<div className="bg-surface border border-border">
+  <h1 className="text-primary">Regular readable text</h1>
+  <span className="text-accent">Brand accent text</span>
+  <button className="bg-primary text-primary-contrast">Button</button>
+</div>
+
+// CSS variables (when you need custom styling)
+<div style={{
+  backgroundColor: 'var(--color-surface)',
+  borderColor: 'var(--color-border)',
+  color: 'var(--color-text-primary)'
+}}>
+  Custom styled content
+</div>
+```
+
+## Theme Support
+
+Colors automatically adapt to light/dark mode based on user preference:
+
+```css
+/* Light mode */
+--color-background: #ffffff;
+--color-text-primary: #1a1a1a;
+
+/* Dark mode (automatically applied) */
+--color-background: #111111;
+--color-text-primary: #f5f5f5;
+```
+
+You can also force a theme by adding a class:
+
+```tsx
+<div className="light-theme">Light theme content</div>
+<div className="dark-theme">Dark theme content</div>
+```
+
+## Next Steps
+
+- [View Color System →](/docs/system-colors--docs)
+- [Browse Components →](/docs/components-button--docs)
+- [See Design Tokens →](/docs/system-design-tokens--docs)
