@@ -2,7 +2,7 @@ import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
 export interface ButtonProps {
-  onClick: () => void;
+  onClick?: () => void;
   disabled?: boolean;
   className?: string;
   isLoading?: boolean;
@@ -22,7 +22,7 @@ export interface ButtonProps {
 
 export const Button = ({
   children,
-  onClick,
+  onClick = () => {},
   disabled,
   className = '',
   isLoading,
