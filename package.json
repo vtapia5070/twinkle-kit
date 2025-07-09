@@ -52,7 +52,7 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "generate": "plop",
-    "prepublishOnly": "npm run test:all && npm run build",
+    "prepublishOnly": "npm run build && npm run test:all",
     "chromatic": "npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN"
   },
   "dependencies": {
