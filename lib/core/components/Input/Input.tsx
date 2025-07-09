@@ -11,6 +11,17 @@ export interface InputProps {
   error?: string;
   required?: boolean;
   inputId?: string;
+  // Accessibility props
+  ariaLabel?: string;
+  ariaLabelledBy?: string;
+  ariaDescribedBy?: string;
+  ariaControls?: string;
+  ariaExpanded?: boolean;
+  ariaInvalid?: boolean;
+  ariaRequired?: boolean;
+  ariaLive?: 'off' | 'polite' | 'assertive';
+  tabIndex?: number;
+  role?: string;
 }
 
 export const Input = ({
@@ -22,6 +33,16 @@ export const Input = ({
   label,
   inputId,
   required = false,
+  ariaLabel,
+  ariaLabelledBy,
+  ariaDescribedBy,
+  ariaControls,
+  ariaExpanded,
+  ariaInvalid,
+  ariaRequired,
+  ariaLive,
+  tabIndex,
+  role,
 }: InputProps) => {
   const generatedId = useId();
 
@@ -55,8 +76,19 @@ export const Input = ({
         placeholder={placeholder}
         onChange={(e) => onChange(e.target.value)}
         className={twMerge(baseClasses, stateClasses)}
-        aria-invalid={!!error}
-        aria-describedby={error ? `${inputId || generatedId}-error` : undefined}
+        aria-label={ariaLabel}
+        aria-labelledby={ariaLabelledBy}
+        aria-describedby={
+          ariaDescribedBy ||
+          (error ? `${inputId || generatedId}-error` : undefined)
+        }
+        aria-controls={ariaControls}
+        aria-expanded={ariaExpanded}
+        aria-invalid={ariaInvalid !== undefined ? ariaInvalid : !!error}
+        aria-required={ariaRequired !== undefined ? ariaRequired : required}
+        aria-live={ariaLive}
+        tabIndex={tabIndex}
+        role={role}
       />
       {error && (
         <p
