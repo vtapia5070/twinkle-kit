@@ -44,15 +44,15 @@
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage",
-    "test:distribution": "npm run build && vitest run lib/test/distribution.test.ts",
-    "test:bundle": "npm run build && vitest run lib/test/bundle.test.ts",
+    "test:distribution": "vitest run lib/test/distribution.test.ts",
+    "test:bundle": "vitest run lib/test/bundle.test.ts",
     "test:integration": "vitest run lib/test/integration.test.tsx",
     "test:watch": "vitest --watch",
     "test:all": "npm run test:coverage && npm run test:distribution && npm run test:bundle",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "generate": "plop",
-    "prepublishOnly": "npm run test:all && npm run build",
+    "prepublishOnly": "npm run build && npm run test:all",
     "chromatic": "npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN"
   },
   "dependencies": {

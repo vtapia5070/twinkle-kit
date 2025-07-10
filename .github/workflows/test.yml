@@ -40,8 +40,11 @@ jobs:
       - name: Run Linting
         run: npm run lint
 
-      - name: Build and Test Bundle
+      - name: Run Build
+        run: npm run build
+
+      - name: Test Bundle
         run: npm run test:bundle
 
-      - name: Build and Test Distribution
+      - name: Test Distribution
         run: npm run test:distribution
