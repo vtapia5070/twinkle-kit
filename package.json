@@ -53,7 +53,11 @@
     "build-storybook": "storybook build",
     "generate": "plop",
     "prepublishOnly": "npm run build && npm run test:all",
-    "chromatic": "npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN"
+    "chromatic": "npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN",
+    "release": "standard-version",
+    "release:minor": "standard-version --release-as minor",
+    "release:major": "standard-version --release-as major",
+    "release:first": "standard-version --first-release"
   },
   "dependencies": {
     "clsx": "^2.1.1",
@@ -71,6 +75,7 @@
     "@testing-library/user-event": "^14.6.1",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
+    "@types/tailwindcss": "^3.1.0",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.18.0",
     "@vitejs/plugin-react": "^4.3.4",
@@ -96,6 +101,7 @@
     "plop": "^4.0.1",
     "prettier": "^3.5.3",
     "save": "^2.9.0",
+    "standard-version": "^9.5.0",
     "storybook": "^9.0.10",
     "tailwindcss": "^4.1.7",
     "typescript": "~5.5.4",
