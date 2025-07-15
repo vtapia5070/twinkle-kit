@@ -1,0 +1,21 @@
+{
+  "types": [
+    {"type": "feat", "section": "✨ Features"},
+    {"type": "fix", "section": "🐛 Bug Fixes"},
+    {"type": "chore", "section": "🔧 Maintenance"},
+    {"type": "docs", "section": "📚 Documentation"},
+    {"type": "style", "section": "💄 Styles"},
+    {"type": "refactor", "section": "♻️ Refactors"},
+    {"type": "perf", "section": "⚡ Performance"},
+    {"type": "test", "section": "✅ Tests"},
+    {"type": "build", "section": "📦 Build"}
+  ],
+  "commitUrlFormat": "https://github.com/vtapia5070/twinkle-kit/commits/{{hash}}",
+  "compareUrlFormat": "https://github.com/vtapia5070/twinkle-kit/compare/{{previousTag}}...{{currentTag}}",
+  "issueUrlFormat": "https://github.com/vtapia5070/twinkle-kit/issues/{{id}}",
+  "userUrlFormat": "https://github.com/{{user}}",
+  "bumpFiles": [
+    "package.json",
+    "package-lock.json"
+  ]
+}
