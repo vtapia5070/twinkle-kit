@@ -18,6 +18,7 @@ export interface ButtonProps {
   ariaLive?: 'off' | 'polite' | 'assertive';
   tabIndex?: number;
   role?: string;
+  type?: 'button' | 'submit' | 'reset';
 }
 
 export const Button = ({
@@ -36,6 +37,7 @@ export const Button = ({
   ariaLive,
   tabIndex,
   role,
+  type = 'button',
 }: ButtonProps) => {
   return (
     <button
@@ -60,6 +62,7 @@ export const Button = ({
       aria-live={ariaLive}
       tabIndex={tabIndex}
       role={role}
+      type={type}
     >
       {isLoading ? 'Loading...' : children}
     </button>
