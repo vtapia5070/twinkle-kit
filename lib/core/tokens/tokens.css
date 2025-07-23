@@ -3,6 +3,7 @@
 
 @import 'tailwindcss';
 @import './colors.css';
+@import './typography.css';
 
 /* Tailwind theme configuration */
 @theme {
