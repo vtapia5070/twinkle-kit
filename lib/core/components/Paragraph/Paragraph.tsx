@@ -2,22 +2,17 @@ import React from 'react';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
-export interface TextProps {
-  as?: keyof JSX.IntrinsicElements;
-  variant?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl';
+export interface ParagraphProps {
+  variant?: 'sm' | 'md' | 'lg';
   weight?: 'regular' | 'medium' | 'semibold' | 'bold';
   className?: string;
   children: React.ReactNode;
 }
 
 const variantClasses = {
-  xs: 'text-xs',
   sm: 'text-sm',
   md: 'text-base',
   lg: 'text-lg',
-  xl: 'text-xl',
-  '2xl': 'text-2xl',
-  '3xl': 'text-3xl',
 };
 
 const weightClasses = {
@@ -27,18 +22,16 @@ const weightClasses = {
   bold: 'font-bold',
 };
 
-export const Text = ({
-  as = 'span',
+export const Paragraph = ({
   variant = 'md',
   weight = 'regular',
   className = '',
   children,
-}: TextProps) => {
+}: ParagraphProps) => {
   const classes = twMerge(
-    'font-sans',
+    'font-sans leading-relaxed',
     clsx(variantClasses[variant], weightClasses[weight]),
     className
   );
-  const Component = as as React.ElementType;
-  return <Component className={classes}>{children}</Component>;
+  return <p className={classes}>{children}</p>;
 };
