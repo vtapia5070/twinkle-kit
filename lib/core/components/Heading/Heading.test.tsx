@@ -9,7 +9,7 @@ describe('Heading', () => {
   });
 
   it('applies the correct font size for variant', () => {
-    render(<Heading variant="3xl">big</Heading>);
+    render(<Heading>big</Heading>);
     const el = screen.getByText('big');
     expect(el.classList).toContain('text-3xl');
   });
@@ -21,7 +21,7 @@ describe('Heading', () => {
   });
 
   it('renders as the specified heading element', () => {
-    render(<Heading as="h4">heading</Heading>);
+    render(<Heading type="h4">heading</Heading>);
     const el = screen.getByText('heading');
     expect(el.tagName.toLowerCase()).toBe('h4');
   });
