@@ -1,2 +1,5 @@
-# Run only linting in pre-commit to keep it fast
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Run TypeScript type checking and linting in pre-commit
 npx tsc --noEmit && npm run lint
