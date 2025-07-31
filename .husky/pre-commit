@@ -1,2 +1,2 @@
-# Run only linting in pre-commit to keep it fast
-npm run lint
+# Run TypeScript type checking and linting in pre-commit
+npx tsc --noEmit && npm run lint

@@ -1,0 +1,339 @@
+import { Meta, Typeset } from '@storybook/addon-docs/blocks';
+import { Text, Heading, Paragraph } from '../../lib/core';
+
+<Meta title="System/Typography" />
+
+# Typography
+
+Comprehensive guide to Twinkle Kit's typography system, including font families, sizes, weights, and line heights.
+
+## Font Families
+
+Our design system uses three font families for different purposes:
+
+### Sans Serif (Default)
+
+```css
+font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+```
+
+Used for most UI text, headings, and body content.
+
+### Serif
+
+```css
+font-family: 'Georgia', 'Times New Roman', serif;
+```
+
+Used for editorial content and long-form text.
+
+### Monospace
+
+```css
+font-family: 'Menlo', 'Monaco', 'Consolas', monospace;
+```
+
+Used for code, technical content, and data display.
+
+## Font Sizes
+
+<Typeset
+  fontFamily="'Inter', 'Helvetica Neue', Arial, sans-serif"
+  fontSizes={[12, 14, 16, 18, 20, 24, 32]}
+  fontWeight={400}
+  sampleText="The quick brown fox jumps over the lazy dog"
+/>
+
+## Font Weights
+
+<Typeset
+  fontFamily="'Inter', 'Helvetica Neue', Arial, sans-serif"
+  fontSizes={[16]}
+  fontWeight={400}
+  sampleText="Regular weight text (400)"
+/>
+
+<Typeset
+  fontFamily="'Inter', 'Helvetica Neue', Arial, sans-serif"
+  fontSizes={[16]}
+  fontWeight={500}
+  sampleText="Medium weight text (500)"
+/>
+
+<Typeset
+  fontFamily="'Inter', 'Helvetica Neue', Arial, sans-serif"
+  fontSizes={[16]}
+  fontWeight={600}
+  sampleText="Semibold weight text (600)"
+/>
+
+<Typeset
+  fontFamily="'Inter', 'Helvetica Neue', Arial, sans-serif"
+  fontSizes={[16]}
+  fontWeight={700}
+  sampleText="Bold weight text (700)"
+/>
+
+## Line Heights
+
+<div
+  style={{
+    fontFamily: "'Inter', 'Helvetica Neue', Arial, sans-serif",
+    fontSize: '16px',
+    lineHeight: '1.1',
+    marginBottom: '1rem',
+  }}
+>
+  <strong>Tight Line Height (1.1)</strong>
+  <br />
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+  nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+</div>
+
+<div
+  style={{
+    fontFamily: "'Inter', 'Helvetica Neue', Arial, sans-serif",
+    fontSize: '16px',
+    lineHeight: '1.5',
+    marginBottom: '1rem',
+  }}
+>
+  <strong>Normal Line Height (1.5)</strong>
+  <br />
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+  nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+</div>
+
+<div
+  style={{
+    fontFamily: "'Inter', 'Helvetica Neue', Arial, sans-serif",
+    fontSize: '16px',
+    lineHeight: '1.75',
+  }}
+>
+  <strong>Relaxed Line Height (1.75)</strong>
+  <br />
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+  nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+</div>
+
+## Typography Components
+
+### Text Component
+
+The `Text` component is the foundation for all typography:
+
+```tsx
+import { Text } from 'twinkle-kit/core';
+
+// Basic usage
+<Text>Default text</Text>
+
+// With variants
+<Text variant="lg" weight="semibold">
+  Large, semibold text
+</Text>
+
+// As different elements
+<Text as="span" variant="sm" weight="medium">
+  Small, medium weight span
+</Text>
+```
+
+### Heading Component
+
+Semantic headings with consistent styling:
+
+```tsx
+import { Heading } from 'twinkle-kit/core';
+
+// Default heading (h2, xl, bold)
+<Heading>Page Title</Heading>
+
+// Different heading levels
+<Heading as="h1" variant="3xl">Main Title</Heading>
+<Heading as="h3" variant="xl">Section Title</Heading>
+
+// Custom weight
+<Heading weight="semibold">Semibold Heading</Heading>
+```
+
+### Paragraph Component
+
+Optimized for body text with relaxed line height:
+
+```tsx
+import { Paragraph } from 'twinkle-kit/core';
+
+// Default paragraph
+<Paragraph>
+  This is body text with relaxed line height for better readability.
+</Paragraph>
+
+// Different sizes
+<Paragraph variant="sm">Small paragraph text</Paragraph>
+<Paragraph variant="lg" weight="medium">
+  Large, medium weight paragraph
+</Paragraph>
+```
+
+## Usage Examples
+
+### Content Hierarchy
+
+```tsx
+function Article() {
+  return (
+    <article>
+      <Heading as="h1" variant="3xl">
+        Article Title
+      </Heading>
+
+      <Heading as="h2" variant="2xl">
+        Section Heading
+      </Heading>
+
+      <Paragraph>
+        This is the main body text with relaxed line height for optimal
+        readability. It uses the default medium size and regular weight.
+      </Paragraph>
+
+      <Heading as="h3" variant="xl">
+        Subsection
+      </Heading>
+
+      <Paragraph variant="sm">
+        Smaller text for supporting content or captions.
+      </Paragraph>
+    </article>
+  );
+}
+```
+
+### Form Labels and Text
+
+```tsx
+function FormExample() {
+  return (
+    <form>
+      <Text as="label" variant="sm" weight="medium">
+        Email Address
+      </Text>
+      <input type="email" />
+
+      <Text variant="xs" className="text-secondary">
+        We'll never share your email with anyone else.
+      </Text>
+    </form>
+  );
+}
+```
+
+### Button Text
+
+```tsx
+function ButtonExample() {
+  return (
+    <button className="bg-primary text-primary-contrast px-4 py-2 rounded">
+      <Text weight="semibold">Primary Action</Text>
+    </button>
+  );
+}
+```
+
+## CSS Custom Properties
+
+All typography values are available as CSS custom properties:
+
+```css
+/* Font Families */
+--font-family-sans: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+--font-family-serif: 'Georgia', 'Times New Roman', serif;
+--font-family-mono: 'Menlo', 'Monaco', 'Consolas', monospace;
+
+/* Font Sizes */
+--font-size-xs: 0.75rem;
+--font-size-sm: 0.875rem;
+--font-size-md: 1rem;
+--font-size-lg: 1.125rem;
+--font-size-xl: 1.25rem;
+--font-size-2xl: 1.5rem;
+--font-size-3xl: 2rem;
+
+/* Font Weights */
+--font-weight-regular: 400;
+--font-weight-medium: 500;
+--font-weight-semibold: 600;
+--font-weight-bold: 700;
+
+/* Line Heights */
+--line-height-tight: 1.1;
+--line-height-normal: 1.5;
+--line-height-relaxed: 1.75;
+```
+
+## Best Practices
+
+### Hierarchy
+
+- Use larger sizes and bolder weights for more important content
+- Maintain consistent heading levels (h1 → h2 → h3)
+- Use semantic HTML elements when possible
+
+### Readability
+
+- Body text should use `leading-relaxed` for better readability
+- Headings use `leading-tight` for compact appearance
+- Avoid using more than 2-3 font weights in a single interface
+
+### Accessibility
+
+- Ensure sufficient contrast ratios
+- Use semantic heading structure
+- Provide adequate line spacing for readability
+
+### Responsive Typography
+
+- Consider using responsive size classes (e.g., `text-lg md:text-xl`)
+- Test readability at different screen sizes
+- Maintain hierarchy across breakpoints
+
+## Component API Reference
+
+### Text Props
+
+```tsx
+interface TextProps {
+  as?: keyof JSX.IntrinsicElements; // Element type
+  variant?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl';
+  weight?: 'regular' | 'medium' | 'semibold' | 'bold';
+  className?: string;
+  children: React.ReactNode;
+}
+```
+
+### Heading Props
+
+```tsx
+interface HeadingProps {
+  as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  variant?: 'xl' | '2xl' | '3xl';
+  weight?: 'regular' | 'medium' | 'semibold' | 'bold';
+  className?: string;
+  children: React.ReactNode;
+}
+```
+
+### Paragraph Props
+
+```tsx
+interface ParagraphProps {
+  variant?: 'sm' | 'md' | 'lg';
+  weight?: 'regular' | 'medium' | 'semibold' | 'bold';
+  className?: string;
+  children: React.ReactNode;
+}
+```

@@ -1,3 +1,6 @@
+export { Paragraph } from './components/Paragraph';
+export { Text } from './components/Text';
+export { Heading } from './components/Heading/Heading';
 export { Alert } from './components/Alert';
 export { Button } from './components/Button';
 export { Card } from './components/Card';
