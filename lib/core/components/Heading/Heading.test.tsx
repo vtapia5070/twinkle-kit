@@ -11,13 +11,13 @@ describe('Heading', () => {
   it('applies the correct font size for variant', () => {
     render(<Heading variant="3xl">big</Heading>);
     const el = screen.getByText('big');
-    expect(el).toHaveStyle({ fontSize: 'var(--font-size-3xl)' });
+    expect(el.classList).toContain('text-3xl');
   });
 
   it('applies the correct font weight', () => {
     render(<Heading weight="semibold">bold</Heading>);
     const el = screen.getByText('bold');
-    expect(el).toHaveStyle({ fontWeight: 'var(--font-weight-semibold)' });
+    expect(el).toHaveClass('font-semibold');
   });
 
   it('renders as the specified heading element', () => {

@@ -11,13 +11,13 @@ describe('Paragraph', () => {
   it('applies the correct font size for variant', () => {
     render(<Paragraph variant="lg">big</Paragraph>);
     const el = screen.getByText('big');
-    expect(el).toHaveStyle({ fontSize: 'var(--font-size-lg)' });
+    expect(el.classList).toContain('text-lg');
   });
 
   it('applies the correct font weight', () => {
     render(<Paragraph weight="semibold">bold</Paragraph>);
     const el = screen.getByText('bold');
-    expect(el).toHaveStyle({ fontWeight: 'var(--font-weight-semibold)' });
+    expect(el.classList).toContain('font-semibold');
   });
 
   it('renders as a p element', () => {
