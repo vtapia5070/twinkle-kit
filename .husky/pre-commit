@@ -1,2 +1,3 @@
 # Run only linting in pre-commit to keep it fast
+npx tsc --noEmit
 npm run lint
