@@ -3,7 +3,7 @@ import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
 export interface TextProps {
-  as?: keyof JSX.IntrinsicElements;
+  as?: React.ElementType;
   variant?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl';
   weight?: 'regular' | 'medium' | 'semibold' | 'bold';
   className?: string;
@@ -39,6 +39,6 @@ export const Text = ({
     clsx(variantClasses[variant], weightClasses[weight]),
     className
   );
-  const Component = as as React.ElementType;
+  const Component = as;
   return <Component className={classes}>{children}</Component>;
 };
