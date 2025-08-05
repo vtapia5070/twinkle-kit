@@ -4,7 +4,7 @@ import { clsx } from 'clsx';
 
 export interface InputProps {
   className?: string;
-  onChange: (value: string) => void;
+  onChange?: (value: string) => void;
   isDisabled?: boolean;
   label?: string;
   placeholder?: string;
@@ -22,11 +22,12 @@ export interface InputProps {
   ariaLive?: 'off' | 'polite' | 'assertive';
   tabIndex?: number;
   role?: string;
+  name?: string;
 }
 
 export const Input = ({
   className = '',
-  onChange,
+  onChange = () => {},
   isDisabled = false,
   placeholder = '',
   error = '',
@@ -43,6 +44,7 @@ export const Input = ({
   ariaLive,
   tabIndex,
   role,
+  name = '',
 }: InputProps) => {
   const generatedId = useId();
 
@@ -89,6 +91,7 @@ export const Input = ({
         aria-live={ariaLive}
         tabIndex={tabIndex}
         role={role}
+        name={name}
       />
       {error && (
         <p
