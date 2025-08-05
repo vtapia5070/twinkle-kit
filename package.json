@@ -1,7 +1,7 @@
 {
   "name": "twinkle-kit",
   "private": false,
-  "version": "2.1.0",
+  "version": "2.1.1",
   "type": "module",
   "module": "./dist/index.es.js",
   "exports": {

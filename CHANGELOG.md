@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.1.1](https://github.com/vtapia5070/twinkle-kit/compare/v2.1.0...v2.1.1) (2025-08-05)
+
+
+### 📚 Documentation
+
+* udpate readme with release workflow ([e3f5df2](https://github.com/vtapia5070/twinkle-kit/commits/e3f5df24b8f0bf5d05f2035004bce8dc31e8cb54))
+
 ## [2.1.0](https://github.com/vtapia5070/twinkle-kit/compare/v2.0.0...v2.1.0) (2025-08-05)
 
 
