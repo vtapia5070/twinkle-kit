@@ -21,11 +21,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Set version from tag
-        run: |
-          TAG_VERSION=${GITHUB_REF#refs/tags/v}
-          npm version "$TAG_VERSION" --no-git-tag-version
-
       - name: Run build and prepublishOnly
         run: npm run prepublishOnly
 
