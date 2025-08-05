@@ -123,17 +123,6 @@ const MyComponent = () => (
 );
 ```
 
-## Components
-
-### Available Components
-
-- `Alert` - Display important messages
-- `Button` - Interactive button component
-- `Card` - Container component
-- `CardHeader` - Card header component
-- `CardDescription` - Card description component
-- `Input` - Form input component
-
 ## Development
 
 ```bash
@@ -148,61 +137,20 @@ npm test
 
 # Build library
 npm run build
-```
-
-## Contributing
-
-We welcome contributions! Please read our contributing guidelines before submitting pull requests.
-
-## License
-
-MIT
-
-## Styling
-
-Twinkle Kit comes with Tailwind CSS styles bundled, so you don't need to set up Tailwind CSS in your project. The styles are automatically included when you import the components.
-
-### Customization
-
-While the styles are bundled, you can still customize the appearance using:
-
-1. **Props**: Each component accepts a `className` prop for custom styling
-
-   ```jsx
-   <Input className="my-custom-class" />
-   ```
-
-2. **Theme Extension**: You can extend the default theme by creating a `tailwind.config.js` in your project:
-   ```js
-   /** @type {import('tailwindcss').Config} */
-   module.exports = {
-     content: [
-       './node_modules/twinkle-kit/dist/**/*.{js,ts,jsx,tsx}',
-       './src/**/*.{js,ts,jsx,tsx}',
-     ],
-     theme: {
-       extend: {
-         // Your custom theme extensions
-       },
-     },
-   };
-   ```
-
-## Development
-
-```bash
-# Install dependencies
-npm install
-
-# Run tests
-npm test
-
-# Build the library
-npm run build
 
 # Start Storybook
 npm run storybook
 ```
+
+### Component Generation
+
+This project uses [Plop](https://plopjs.com/) for generating component templates:
+
+```bash
+npm run generate {{componentName}}
+```
+
+This creates a component with TypeScript, Storybook story, and test files.
 
 ### Test Changes
 
@@ -214,85 +162,55 @@ npm link
 npm link twinkle-kit
 ```
 
-## Component Generation
+## Releasing
 
-This project uses [Plop](https://plopjs.com/) for generating component templates. Plop helps maintain consistency across components by using predefined templates.
+### Prerequisites
 
-### Generating Components
+- Ensure all tests pass: `npm run test:all`
+- Ensure linting passes: `npm run lint`
+- Ensure build works: `npm run build`
 
-To generate a new component with its associated files (component, story, and test), run:
+### Release Process
 
-```bash
-npm run generate {{componentName}}
-```
+1. **Make changes and commit with conventional format**:
 
-This will create:
+   ```bash
+   git add .
+   git commit -m "feat: add new typography components"
+   ```
 
-- A new component file with TypeScript and React setup
-- A Storybook story file
-- A test file with Vitest and React Testing Library setup
+2. **Create release** (this updates version, generates changelog, and creates tag):
 
-The generated files follow the project's conventions and include all necessary imports and boilerplate code.
+   ```bash
+   npm run release
+   ```
 
-## Code Quality Tools
+3. **Push changes and tags**:
 
-### ESLint Configuration
+   ```bash
+   git push --follow-tags
+   ```
 
-This project uses a comprehensive ESLint setup with:
+4. **CI automatically publishes** to npm when the tag is pushed.
 
-- TypeScript support via `@typescript-eslint`
-- React specific rules via `eslint-plugin-react` and `eslint-plugin-react-hooks`
-- Airbnb style guide via `eslint-config-airbnb-typescript`
-- Prettier integration via `eslint-config-prettier` and `eslint-plugin-prettier`
+### Commit Message Format
 
-### Prettier Configuration
+Follow [Conventional Commits](https://www.conventionalcommits.org/):
 
-Code formatting is handled by Prettier with the following settings:
+- `feat:` - New features (minor version)
+- `fix:` - Bug fixes (patch version)
+- `docs:` - Documentation changes
+- `style:` - Code style changes
+- `refactor:` - Code refactoring
+- `test:` - Adding tests
+- `chore:` - Maintenance tasks
+- `BREAKING CHANGE:` - Breaking changes (major version)
 
-```json
-{
-  "trailingComma": "es5",
-  "tabWidth": 2,
-  "semi": true,
-  "singleQuote": true
-}
-```
+### Version Bumps
 
-### Git Hooks
-
-The project uses Husky and lint-staged to ensure code quality:
-
-- Pre-commit hooks run ESLint and Prettier on staged files
-- TypeScript type checking is enforced
-
-## Available Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run lint` - Run ESLint
-- `npm run lint:fix` - Fix ESLint issues
-- `npm test` - Run tests
-- `npm run storybook` - Start Storybook development server
-- `npm run build-storybook` - Build Storybook for production
-
-## VS Code Configuration
-
-The project includes VS Code settings for optimal development experience:
-
-- Format on save enabled
-- Prettier as default formatter
-- TypeScript and JavaScript support configured
-
-## TypeScript Configuration
-
-The project uses strict TypeScript settings with:
-
-- ES2020 target
-- React JSX support
-- Strict type checking
-- Module bundling support
-- Path aliases configured
+- **Patch** (`1.0.0` → `1.0.1`): Bug fixes
+- **Minor** (`1.0.0` → `1.1.0`): New features
+- **Major** (`1.0.0` → `2.0.0`): Breaking changes
 
 ## Testing
 
@@ -322,22 +240,24 @@ npm run test:all
 - **Bundle Analysis** - Tree-shaking support and bundle optimization
 - **Visual Regression** - Cross-browser appearance via Storybook + Chromatic
 
-### Comprehensive Testing Guide
-
-For detailed information about our testing strategy, tools, best practices, and how to write tests, see our complete **[Testing Guide](lib/test/README.md)**.
-
-The testing guide covers:
-
-- Testing philosophy and approach
-- How to write good component tests
-- Accessibility testing guidelines
-- Integration testing patterns
-- CI/CD testing pipeline
-- Debugging and coverage analysis
+For detailed testing information, see our **[Testing Guide](lib/test/README.md)**.
 
 ### Visual Testing
 
-This project uses [Chromatic](https://www.chromatic.com/) for visual testing and component documentation. Every pull request use GH actions to generate a preview of the Storybook that you can view and test. The url format will be `https://www.chromatic.com/library?appId=682e94b4a008f5591a2429cf&branch={{branch-name}}` and commented in the PR.
+This project uses [Chromatic](https://www.chromatic.com/) for visual testing. Every pull request generates a preview URL that will be commented in the PR.
+
+## Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+- `npm run lint:fix` - Fix ESLint issues
+- `npm test` - Run tests
+- `npm run storybook` - Start Storybook development server
+- `npm run build-storybook` - Build Storybook for production
+- `npm run generate` - Generate new component
+- `npm run release` - Create new release
 
 ## Contributing
 
