@@ -4,8 +4,8 @@ import { clsx } from 'clsx';
 
 export interface NavbarProps {
   className?: string;
-  label?: string;
   onMenuToggle?: (isOpen: boolean) => void;
+  children?: React.ReactNode;
   // Accessibility props
   ariaLabel?: string;
   ariaLabelledBy?: string;
@@ -15,8 +15,8 @@ export interface NavbarProps {
 
 export const Navbar = ({
   className = '',
-  label,
   onMenuToggle = () => {},
+  children,
   ariaLabel = 'Main navigation',
   ariaLabelledBy,
   ariaDescribedBy,
@@ -48,11 +48,7 @@ export const Navbar = ({
       aria-labelledby={ariaLabelledBy}
       aria-describedby={ariaDescribedBy}
     >
-      <div className="flex-1 flex justify-center">
-        {label && (
-          <span className="text-lg text-white font-medium">{label}</span>
-        )}
-      </div>
+      <div className="flex-1 flex justify-center">{children}</div>
 
       <button
         type="button"
