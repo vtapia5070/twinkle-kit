@@ -43,6 +43,10 @@ const meta = {
       control: 'text',
       description: 'The id of the input for accessibility',
     },
+    value: {
+      control: 'text',
+      description: 'The controlled value of the input',
+    },
   },
 } satisfies Meta<typeof Input>;
 
@@ -87,6 +91,32 @@ export const WithCustomClass: Story = {
   args: {
     label: 'Custom Styled Input',
     className: 'max-w-md',
+    onChange: action('onChange'),
+  },
+};
+
+export const FloatingLabel: Story = {
+  args: {
+    label: 'Floating Label Example',
+    placeholder: 'Enter some text...',
+    onChange: action('onChange'),
+  },
+};
+
+export const FloatingLabelWithError: Story = {
+  args: {
+    label: 'Email Address',
+    placeholder: 'you@example.com',
+    error: 'Please enter a valid email address',
+    onChange: action('onChange'),
+  },
+};
+
+export const FloatingLabelWithValue: Story = {
+  args: {
+    label: 'Pre-filled Input',
+    value: 'This input has content',
+    placeholder: 'Enter text...',
     onChange: action('onChange'),
   },
 };
