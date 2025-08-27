@@ -1,4 +1,4 @@
-import React from 'react';
+import { ReactNode } from 'react';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
@@ -8,7 +8,7 @@ export interface HeadingProps {
   type?: HeadingType;
   weight?: 'regular' | 'medium' | 'semibold' | 'bold';
   className?: string;
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 const headingSizeClasses = {

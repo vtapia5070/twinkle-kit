@@ -1,0 +1,261 @@
+import { Meta, Canvas, Story } from '@storybook/addon-docs/blocks';
+import { Icon } from '../../lib/core/components/Icon';
+
+<Meta title="Components/Icon/Documentation" />
+
+# Icon Component
+
+The Icon component provides a consistent way to display SVG icons throughout your application. It comes with a curated set of commonly used icons and supports customization for size, color, and accessibility.
+
+## Features
+
+- **Predefined Icons**: Includes success, close, menu, and user icons
+- **Multiple Sizes**: Four size variants (sm, md, lg, xl)
+- **Flexible Styling**: Support for custom colors and CSS classes
+- **Accessibility**: Full ARIA support for screen readers
+- **TypeScript**: Complete TypeScript support with type safety
+
+## Installation & Import
+
+### Basic Import
+
+```tsx
+import { Icon } from 'twinkle-kit';
+
+// Or import with types
+import { Icon, type IconProps, type IconName } from 'twinkle-kit';
+```
+
+### Component-specific Import
+
+```tsx
+import { Icon } from 'twinkle-kit/core';
+```
+
+## Basic Usage
+
+### Simple Icon
+
+```tsx
+<Icon name="success" />
+```
+
+### With Size and Color
+
+```tsx
+<Icon name="success" size="lg" className="text-green-500" />
+```
+
+### Custom Color
+
+```tsx
+<Icon name="success" size="lg" color="#10b981" />
+```
+
+## Available Icons
+
+The Icon component includes these predefined icons:
+
+<div style={{ display: 'flex', gap: '2rem', margin: '2rem 0' }}>
+  <div style={{ textAlign: 'center' }}>
+    <Icon name="success" size="xl" />
+    <p><code>success</code></p>
+  </div>
+  <div style={{ textAlign: 'center' }}>
+    <Icon name="close" size="xl" />
+    <p><code>close</code></p>
+  </div>
+  <div style={{ textAlign: 'center' }}>
+    <Icon name="menu" size="xl" />
+    <p><code>menu</code></p>
+  </div>
+  <div style={{ textAlign: 'center' }}>
+    <Icon name="user" size="xl" />
+    <p><code>user</code></p>
+  </div>
+</div>
+
+## Size Variants
+
+Icons are available in four sizes:
+
+<div style={{ display: 'flex', gap: '2rem', alignItems: 'center', margin: '2rem 0' }}>
+  <div style={{ textAlign: 'center' }}>
+    <Icon name="success" size="sm" />
+    <p><code>sm</code> (16px)</p>
+  </div>
+  <div style={{ textAlign: 'center' }}>
+    <Icon name="success" size="md" />
+    <p><code>md</code> (20px)</p>
+  </div>
+  <div style={{ textAlign: 'center' }}>
+    <Icon name="success" size="lg" />
+    <p><code>lg</code> (24px)</p>
+  </div>
+  <div style={{ textAlign: 'center' }}>
+    <Icon name="success" size="xl" />
+    <p><code>xl</code> (32px)</p>
+  </div>
+</div>
+
+## Common Use Cases
+
+### In Buttons
+
+```tsx
+// Button with icon and text
+<button className="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded">
+  <Icon name="success" size="sm" />
+  Save Changes
+</button>
+
+// Icon-only button
+<button className="p-2 rounded hover:bg-gray-100">
+  <Icon name="menu" size="md" />
+</button>
+```
+
+### Inline with Text
+
+```tsx
+<p>
+  <Icon name="success" size="sm" className="text-green-500 mr-1" />
+  Operation completed successfully
+</p>
+```
+
+### Status Indicators
+
+```tsx
+// Success state
+<div className="flex items-center gap-2">
+  <Icon name="success" size="sm" className="text-green-500" />
+  <span>Verified</span>
+</div>
+
+// Error state
+<div className="flex items-center gap-2">
+  <Icon name="close" size="sm" className="text-red-500" />
+  <span>Failed</span>
+</div>
+```
+
+## Styling with Design Tokens
+
+Use Twinkle Kit's design tokens for consistent styling:
+
+```tsx
+// Using semantic color classes
+<Icon name="success" className="text-success" />
+<Icon name="close" className="text-error" />
+<Icon name="menu" className="text-primary" />
+<Icon name="user" className="text-secondary" />
+
+// Custom styling with Tailwind
+<Icon name="success" className="text-green-500 hover:text-green-600" />
+```
+
+## Accessibility
+
+### Decorative Icons
+
+For decorative icons (e.g., in buttons with text), use the default `ariaHidden={true}`:
+
+```tsx
+<button>
+  <Icon name="success" size="sm" />
+  Save Changes
+</button>
+```
+
+### Meaningful Icons
+
+For icons that convey meaning, provide an accessible label:
+
+```tsx
+<Icon 
+  name="success" 
+  ariaLabel="Operation completed successfully"
+  ariaHidden={false}
+  role="img"
+/>
+```
+
+### Icon-only Buttons
+
+For icon-only interactive elements, ensure the button has proper labeling:
+
+```tsx
+<button aria-label="Open menu">
+  <Icon name="menu" size="md" />
+</button>
+```
+
+## TypeScript
+
+The Icon component is fully typed with TypeScript:
+
+```tsx
+import { Icon, type IconName, type IconSize, type IconProps } from 'twinkle-kit';
+
+// Valid icon names are enforced
+const validIcon: IconName = 'success'; // ✅
+const invalidIcon: IconName = 'invalid'; // ❌ TypeScript error
+
+// Valid sizes are enforced
+const validSize: IconSize = 'lg'; // ✅
+const invalidSize: IconSize = 'huge'; // ❌ TypeScript error
+
+// Component props are typed
+const iconProps: IconProps = {
+  name: 'success',
+  size: 'lg',
+  className: 'text-green-500',
+  ariaLabel: 'Success indicator',
+};
+```
+
+## API Reference
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `name` | `IconName` | - | Icon name to display (required) |
+| `size` | `IconSize` | `'md'` | Size variant |
+| `className` | `string` | `''` | Additional CSS classes |
+| `color` | `string` | `'currentColor'` | Icon stroke color |
+| `ariaLabel` | `string` | - | Accessible label |
+| `ariaHidden` | `boolean` | `true` | Hide from screen readers |
+| `role` | `string` | - | ARIA role attribute |
+
+### Types
+
+```tsx
+type IconName = 'success' | 'close' | 'menu' | 'user';
+type IconSize = 'sm' | 'md' | 'lg' | 'xl';
+```
+
+## Best Practices
+
+1. **Use semantic colors**: Leverage design tokens for consistent theming
+2. **Consider accessibility**: Provide labels for meaningful icons, hide decorative ones
+3. **Size appropriately**: Choose sizes that complement your typography scale
+4. **Be consistent**: Use the same icon for the same action across your app
+5. **Test with screen readers**: Ensure your icon usage is accessible
+
+## Error Handling
+
+The Icon component includes built-in error handling:
+
+```tsx
+// This will render nothing and log a warning
+<Icon name="nonexistent" />
+// Console: "Icon 'nonexistent' not found. Available icons: success, close, menu, user"
+```
+
+## Performance
+
+Icons are:
+- **Lightweight**: Small SVG paths with minimal markup
+- **Scalable**: Vector-based for crisp rendering at any size
+- **Cacheable**: Inline SVGs are cached with your component bundle
+- **Tree-shakeable**: Only the icons you use are included in your bundle

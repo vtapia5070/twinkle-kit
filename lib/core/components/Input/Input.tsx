@@ -1,5 +1,5 @@
 import { twMerge } from 'tailwind-merge';
-import { useId, useState, useRef } from 'react';
+import { useId, useState, useRef, ChangeEvent } from 'react';
 import { clsx } from 'clsx';
 
 export interface InputProps {
@@ -82,7 +82,7 @@ export const Input = ({
     }
   );
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const newValue = e.target.value;
     if (controlledValue === undefined) {
       setInternalValue(newValue);

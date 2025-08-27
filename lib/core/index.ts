@@ -8,3 +8,5 @@ export { CardHeader } from './components/CardHeader';
 export { CardDescription } from './components/CardDescription';
 export { Input } from './components/Input';
 export { Navbar } from './components/Navbar';
+export { Icon } from './components/Icon';
+export type { IconProps, IconName, IconSize } from './components/Icon';

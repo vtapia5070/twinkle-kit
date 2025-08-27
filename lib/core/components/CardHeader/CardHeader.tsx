@@ -1,8 +1,9 @@
+import { ReactNode } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 export interface CardHeaderProps {
   className?: string;
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 export const CardHeader = ({ className = '', children }: CardHeaderProps) => {
