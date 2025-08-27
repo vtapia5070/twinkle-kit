@@ -1,11 +1,11 @@
-import { useState } from 'react';
+import { useState, ReactNode } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { clsx } from 'clsx';
 
 export interface NavbarProps {
   className?: string;
   onMenuToggle?: (isOpen: boolean) => void;
-  children?: React.ReactNode;
+  children?: ReactNode;
   // Accessibility props
   ariaLabel?: string;
   ariaLabelledBy?: string;

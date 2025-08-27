@@ -1,4 +1,4 @@
-import React from 'react';
+import { ReactElement } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { clsx } from 'clsx';
 
@@ -16,7 +16,7 @@ export interface IconProps {
   role?: string;
 }
 
-const iconPaths: Record<IconName, React.ReactElement> = {
+const iconPaths: Record<IconName, ReactElement> = {
   success: (
     <path
       strokeLinecap="round"

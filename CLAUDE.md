@@ -86,3 +86,40 @@ Multi-layered approach:
 - **Prettier**: Code formatting
 - **Husky**: Git hooks for pre-commit linting
 - **lint-staged**: Run linting only on staged files
+
+### React Import Conventions
+**IMPORTANT**: Always use named imports for React types instead of namespace imports:
+
+✅ **Correct**: 
+```tsx
+import { ReactNode, ReactElement, ElementType, ChangeEvent } from 'react';
+
+interface Props {
+  children: ReactNode;
+  element: ReactElement;
+  as: ElementType;
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+}
+
+export const MyComponent = ({ children }: Props) => {
+  return <div>{children}</div>; // JSX works without React import
+};
+```
+
+❌ **Incorrect**:
+```tsx
+import React from 'react';
+
+interface Props {
+  children: React.ReactNode;
+  element: React.ReactElement;
+  as: React.ElementType;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}
+```
+
+**Rules**:
+- NEVER use `React.ReactNode`, `React.ReactElement`, `React.ElementType`, etc.
+- ALWAYS import specific types: `import { ReactNode, ReactElement, ElementType } from 'react'`
+- NEVER import React default export - modern JSX transform handles this automatically
+- Only import the specific types/hooks you need from React

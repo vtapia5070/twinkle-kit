@@ -1,13 +1,13 @@
-import React from 'react';
+import { ReactNode, ElementType } from 'react';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
 export interface TextProps {
-  as?: React.ElementType;
+  as?: ElementType;
   variant?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl';
   weight?: 'regular' | 'medium' | 'semibold' | 'bold';
   className?: string;
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 const variantClasses = {

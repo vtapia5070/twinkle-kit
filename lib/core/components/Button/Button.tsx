@@ -1,4 +1,4 @@
-import React from 'react';
+import { ReactNode } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 export interface ButtonProps {
@@ -6,7 +6,7 @@ export interface ButtonProps {
   disabled?: boolean;
   className?: string;
   isLoading?: boolean;
-  children: React.ReactNode;
+  children: ReactNode;
   // Accessibility props
   ariaLabel?: string;
   ariaLabelledBy?: string;

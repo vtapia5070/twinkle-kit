@@ -1,6 +1,8 @@
+import { ReactNode } from 'react';
+
 export interface CardDescriptionProps {
   className?: string;
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 export const CardDescription = ({
